@@ -109,7 +109,26 @@ body{font-family:'DM Sans',sans-serif;background:#F6F4F0;color:#1C2130;min-heigh
 .vtoggle-p{background:none;border:.5px solid #E8E4DD;border-radius:6px;padding:4px 10px;font-size:12px;cursor:pointer;font-family:'DM Sans',sans-serif;color:#6B7280;margin-top:6px;display:inline-flex;align-items:center;gap:5px;transition:all .15s}
 
 /* ── Week tabs ─────────────────────────────────────────────── */
-.wtabs{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:1.25rem;padding-top:1.25rem}
+.wtabs{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-bottom:1.25rem;padding-top:1.25rem}
+@media (max-width:640px){.wtabs{grid-template-columns:repeat(3,1fr)}}
+.wgroups{display:flex;flex-direction:column;gap:8px;margin-bottom:1.25rem;padding-top:1.25rem}
+.wgroup-headers{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:10px;padding-top:1.25rem}
+.wgroup-head{width:100%;text-align:center;padding:.7rem 1rem;background:#fff;border:.5px solid #E8E4DD;border-radius:12px;cursor:pointer;font-family:'DM Sans',sans-serif;font-size:12.5px;font-weight:600;color:#1C2130;display:flex;justify-content:space-between;align-items:center;gap:8px;transition:all .15s}
+.wgroup-head span:first-child{flex:1;text-align:center}
+.wgroup-head:hover{border-color:#6B8AFF}
+.wgroup-head.open{background:#F6F4F0;border-color:#6B8AFF}
+.wgroup-head .wg-chev{font-size:11px;color:#6B8AFF;transition:transform .2s;flex-shrink:0}
+.wgroup-head.open .wg-chev{transform:rotate(90deg)}
+.wgroup-bodies{margin-bottom:1.25rem;display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.wgroup-body{display:none;flex-direction:column;align-items:stretch;justify-self:stretch;gap:8px;padding:.75rem;border:.5px solid #E8E4DD;border-radius:12px;background:#fff;width:auto}
+#wgbody1{grid-column:1}
+#wgbody2{grid-column:2}
+#wgbody3{grid-column:3}
+#wgbody4{grid-column:4}
+@media (max-width:640px){.wgroup-bodies{grid-template-columns:repeat(2,1fr)}#wgbody1,#wgbody3{grid-column:1}#wgbody2,#wgbody4{grid-column:2}}
+.wgroup-body.open{display:flex}
+.wgroup-body .wtab{width:100%;text-align:center}
+@media (max-width:640px){.wgroup-headers{grid-template-columns:repeat(2,1fr)}}
 .wtab{padding:5px 16px;border-radius:20px;border:.5px solid #E8E4DD;background:#fff;font-size:12.5px;font-weight:500;cursor:pointer;font-family:'DM Sans',sans-serif;color:#6B7280;transition:all .15s}
 .wtab:hover{border-color:#6B8AFF;color:#6B8AFF}
 .wtab.on{background:#1C2130;color:#fff;border-color:#1C2130}
@@ -214,7 +233,6 @@ body{background:#f4fbff !important}
   </nav>
 
   <div class="main-panel on" id="mp1">
-id="mp1">
     <div class="hero">
   
   <div class="h1">Communication Course</div>
@@ -434,6 +452,80 @@ id="mp1">
 <table style="width:100%;border-collapse:collapse;font-size:12.5px;margin-top:6px"><thead><tr style="background:#F6F4F0"><th style="text-align:left;padding:8px 10px;border-bottom:1.5px solid #E8E4DD;font-weight:600;color:#1C2130">Từ vựng</th><th style="text-align:left;padding:8px 10px;border-bottom:1.5px solid #E8E4DD;font-weight:600;color:#1C2130">Phiên âm</th><th style="text-align:left;padding:8px 10px;border-bottom:1.5px solid #E8E4DD;font-weight:600;color:#1C2130">Dịch nghĩa</th></tr></thead><tbody><tr><td>automation <span style="font-size:11px;color:#9CA3AF">(n)</span></td><td style="color:#6B7280;font-style:italic">/ˌɔː.təˈmeɪ.ʃən/</td><td>Tự động hoá công việc bằng máy móc / AI</td></tr><tr><td>gig economy <span style="font-size:11px;color:#9CA3AF">(phrase)</span></td><td style="color:#6B7280;font-style:italic">/ɡɪɡ ɪˈkɒn.ə.mi/</td><td>Nền kinh tế công việc tự do, ngắn hạn</td></tr><tr><td>upskill <span style="font-size:11px;color:#9CA3AF">(v)</span></td><td style="color:#6B7280;font-style:italic">/ˌʌpˈskɪl/</td><td>Nâng cao kỹ năng để không bị lỗi thời</td></tr><tr><td>disruption <span style="font-size:11px;color:#9CA3AF">(n)</span></td><td style="color:#6B7280;font-style:italic">/dɪsˈrʌp.ʃən/</td><td>Sự thay đổi lớn phá vỡ cách làm việc cũ</td></tr><tr><td>hybrid work <span style="font-size:11px;color:#9CA3AF">(phrase)</span></td><td style="color:#6B7280;font-style:italic">/ˈhaɪ.brɪd wɜːk/</td><td>Mô hình làm việc kết hợp văn phòng và từ xa</td></tr><tr><td>workforce <span style="font-size:11px;color:#9CA3AF">(n)</span></td><td style="color:#6B7280;font-style:italic">/ˈwɜːk.fɔːs/</td><td>Lực lượng lao động</td></tr><tr><td>adaptability <span style="font-size:11px;color:#9CA3AF">(n)</span></td><td style="color:#6B7280;font-style:italic">/əˌdæp.təˈbɪl.ɪ.ti/</td><td>Khả năng thích nghi, linh hoạt với thay đổi</td></tr><tr><td>resilience <span style="font-size:11px;color:#9CA3AF">(n)</span></td><td style="color:#6B7280;font-style:italic">/rɪˈzɪl.i.əns/</td><td>Khả năng phục hồi, vượt qua thay đổi</td></tr></tbody></table>
 </div></div>
 </div></div>
+<div class="vc-group"><button class="vc-group-btn" onclick="toggleVCGroup(this)"><span>Week 10–11</span><span><span class="vc-g-count">4 topics · 32 words</span> <span class="vc-g-arrow">▶</span></span></button><div class="vc-group-inner">
+<div class="vcollapse"><button class="vctoggle" onclick="toggleVC(this)"><span class="vc-arrow">▶</span><span style="font-size:11px;font-weight:600;color:#6B8AFF;margin-right:4px">Y</span>Making Small Talk & Meeting New People <span class="vc-count">8 từ</span></button><div class="itvgrid vchidden" style="display:none;padding:10px">
+<table style="width:100%;border-collapse:collapse;font-size:12.5px;margin-top:6px"><thead><tr style="background:#F6F4F0"><th style="text-align:left;padding:8px 10px;border-bottom:1.5px solid #E8E4DD;font-weight:600;color:#1C2130">Từ vựng</th><th style="text-align:left;padding:8px 10px;border-bottom:1.5px solid #E8E4DD;font-weight:600;color:#1C2130">Phiên âm</th><th style="text-align:left;padding:8px 10px;border-bottom:1.5px solid #E8E4DD;font-weight:600;color:#1C2130">Dịch nghĩa</th></tr></thead><tbody><tr><td>icebreaker <span style="font-size:11px;color:#9CA3AF">(n)</span></td><td style="color:#6B7280;font-style:italic">/ˈaɪs.breɪ.kər/</td><td>Câu chuyện hoặc hoạt động phá vỡ sự ngại ngùng ban đầu</td></tr><tr><td>small talk <span style="font-size:11px;color:#9CA3AF">(phrase)</span></td><td style="color:#6B7280;font-style:italic">/smɔːl tɔːk/</td><td>Chuyện phiếm, chuyện xã giao</td></tr><tr><td>awkward silence <span style="font-size:11px;color:#9CA3AF">(phrase)</span></td><td style="color:#6B7280;font-style:italic">/ˈɔːk.wəd ˈsaɪ.ləns/</td><td>Sự im lặng khó xử</td></tr><tr><td>common ground <span style="font-size:11px;color:#9CA3AF">(phrase)</span></td><td style="color:#6B7280;font-style:italic">/ˈkɒm.ən ɡraʊnd/</td><td>Điểm chung</td></tr><tr><td>mingle <span style="font-size:11px;color:#9CA3AF">(v)</span></td><td style="color:#6B7280;font-style:italic">/ˈmɪŋ.ɡəl/</td><td>Hòa nhập, giao lưu trong đám đông</td></tr><tr><td>approachable <span style="font-size:11px;color:#9CA3AF">(adj)</span></td><td style="color:#6B7280;font-style:italic">/əˈprəʊ.tʃə.bəl/</td><td>Dễ gần, dễ tiếp cận</td></tr><tr><td>rapport <span style="font-size:11px;color:#9CA3AF">(n)</span></td><td style="color:#6B7280;font-style:italic">/ræˈpɔːr/</td><td>Mối quan hệ hòa hợp, tin tưởng</td></tr><tr><td>follow-up <span style="font-size:11px;color:#9CA3AF">(n)</span></td><td style="color:#6B7280;font-style:italic">/ˈfɒl.əʊ ʌp/</td><td>Sự tiếp nối, liên hệ lại sau đó</td></tr></tbody></table>
+</div></div>
+<div class="vcollapse"><button class="vctoggle" onclick="toggleVC(this)"><span class="vc-arrow">▶</span><span style="font-size:11px;font-weight:600;color:#6B8AFF;margin-right:4px">Z</span>Friendships & Staying Connected as an Adult <span class="vc-count">8 từ</span></button><div class="itvgrid vchidden" style="display:none;padding:10px">
+<table style="width:100%;border-collapse:collapse;font-size:12.5px;margin-top:6px"><thead><tr style="background:#F6F4F0"><th style="text-align:left;padding:8px 10px;border-bottom:1.5px solid #E8E4DD;font-weight:600;color:#1C2130">Từ vựng</th><th style="text-align:left;padding:8px 10px;border-bottom:1.5px solid #E8E4DD;font-weight:600;color:#1C2130">Phiên âm</th><th style="text-align:left;padding:8px 10px;border-bottom:1.5px solid #E8E4DD;font-weight:600;color:#1C2130">Dịch nghĩa</th></tr></thead><tbody><tr><td>drift apart <span style="font-size:11px;color:#9CA3AF">(phrase)</span></td><td style="color:#6B7280;font-style:italic">/drɪft əˈpɑːt/</td><td>Dần xa cách nhau</td></tr><tr><td>catch up <span style="font-size:11px;color:#9CA3AF">(phrasal v)</span></td><td style="color:#6B7280;font-style:italic">/kætʃ ʌp/</td><td>Gặp gỡ, cập nhật tin tức</td></tr><tr><td>close-knit <span style="font-size:11px;color:#9CA3AF">(adj)</span></td><td style="color:#6B7280;font-style:italic">/kləʊs nɪt/</td><td>Gắn bó khăng khít</td></tr><tr><td>effort <span style="font-size:11px;color:#9CA3AF">(n)</span></td><td style="color:#6B7280;font-style:italic">/ˈef.ət/</td><td>Nỗ lực, công sức</td></tr><tr><td>reconnect <span style="font-size:11px;color:#9CA3AF">(v)</span></td><td style="color:#6B7280;font-style:italic">/ˌriː.kəˈnekt/</td><td>Kết nối lại</td></tr><tr><td>circle of friends <span style="font-size:11px;color:#9CA3AF">(phrase)</span></td><td style="color:#6B7280;font-style:italic">/ˈsɜː.kəl əv frendz/</td><td>Nhóm bạn bè</td></tr><tr><td>quality time <span style="font-size:11px;color:#9CA3AF">(phrase)</span></td><td style="color:#6B7280;font-style:italic">/ˈkwɒl.ɪ.ti taɪm/</td><td>Thời gian chất lượng bên nhau</td></tr><tr><td>reach out <span style="font-size:11px;color:#9CA3AF">(phrasal v)</span></td><td style="color:#6B7280;font-style:italic">/riːtʃ aʊt/</td><td>Chủ động liên lạc</td></tr></tbody></table>
+</div></div>
+<div class="vcollapse"><button class="vctoggle" onclick="toggleVC(this)"><span class="vc-arrow">▶</span><span style="font-size:11px;font-weight:600;color:#6B8AFF;margin-right:4px">AA</span>Coffee Culture & Casual Meetups <span class="vc-count">8 từ</span></button><div class="itvgrid vchidden" style="display:none;padding:10px">
+<table style="width:100%;border-collapse:collapse;font-size:12.5px;margin-top:6px"><thead><tr style="background:#F6F4F0"><th style="text-align:left;padding:8px 10px;border-bottom:1.5px solid #E8E4DD;font-weight:600;color:#1C2130">Từ vựng</th><th style="text-align:left;padding:8px 10px;border-bottom:1.5px solid #E8E4DD;font-weight:600;color:#1C2130">Phiên âm</th><th style="text-align:left;padding:8px 10px;border-bottom:1.5px solid #E8E4DD;font-weight:600;color:#1C2130">Dịch nghĩa</th></tr></thead><tbody><tr><td>regular spot <span style="font-size:11px;color:#9CA3AF">(phrase)</span></td><td style="color:#6B7280;font-style:italic">/ˈreɡ.jə.lər spɒt/</td><td>Chỗ quen thuộc hay lui tới</td></tr><tr><td>casual <span style="font-size:11px;color:#9CA3AF">(adj)</span></td><td style="color:#6B7280;font-style:italic">/ˈkæʒ.u.əl/</td><td>Thoải mái, không trang trọng</td></tr><tr><td>catch-up <span style="font-size:11px;color:#9CA3AF">(n)</span></td><td style="color:#6B7280;font-style:italic">/ˈkætʃ ʌp/</td><td>Buổi gặp cập nhật tin tức</td></tr><tr><td>barista <span style="font-size:11px;color:#9CA3AF">(n)</span></td><td style="color:#6B7280;font-style:italic">/bəˈriː.stə/</td><td>Nhân viên pha chế</td></tr><tr><td>ambiance <span style="font-size:11px;color:#9CA3AF">(n)</span></td><td style="color:#6B7280;font-style:italic">/ˈæm.bi.əns/</td><td>Không khí, bầu không khí quán</td></tr><tr><td>grab a coffee <span style="font-size:11px;color:#9CA3AF">(phrase)</span></td><td style="color:#6B7280;font-style:italic">/ɡræb ə ˈkɒf.i/</td><td>Ghé uống cà phê nhanh</td></tr><tr><td>hang out <span style="font-size:11px;color:#9CA3AF">(phrasal v)</span></td><td style="color:#6B7280;font-style:italic">/hæŋ aʊt/</td><td>Đi chơi, tụ tập</td></tr><tr><td>low commitment <span style="font-size:11px;color:#9CA3AF">(phrase)</span></td><td style="color:#6B7280;font-style:italic">/ləʊ kəˈmɪt.mənt/</td><td>Không ràng buộc nhiều</td></tr></tbody></table>
+</div></div>
+<div class="vcollapse"><button class="vctoggle" onclick="toggleVC(this)"><span class="vc-arrow">▶</span><span style="font-size:11px;font-weight:600;color:#6B8AFF;margin-right:4px">BB</span>Karaoke & Nightlife with Friends <span class="vc-count">8 từ</span></button><div class="itvgrid vchidden" style="display:none;padding:10px">
+<table style="width:100%;border-collapse:collapse;font-size:12.5px;margin-top:6px"><thead><tr style="background:#F6F4F0"><th style="text-align:left;padding:8px 10px;border-bottom:1.5px solid #E8E4DD;font-weight:600;color:#1C2130">Từ vựng</th><th style="text-align:left;padding:8px 10px;border-bottom:1.5px solid #E8E4DD;font-weight:600;color:#1C2130">Phiên âm</th><th style="text-align:left;padding:8px 10px;border-bottom:1.5px solid #E8E4DD;font-weight:600;color:#1C2130">Dịch nghĩa</th></tr></thead><tbody><tr><td>karaoke <span style="font-size:11px;color:#9CA3AF">(n)</span></td><td style="color:#6B7280;font-style:italic">/ˌkær.iˈəʊ.ki/</td><td>Hát karaoke</td></tr><tr><td>sing along <span style="font-size:11px;color:#9CA3AF">(phrasal v)</span></td><td style="color:#6B7280;font-style:italic">/sɪŋ əˈlɒŋ/</td><td>Hát theo</td></tr><tr><td>nightlife <span style="font-size:11px;color:#9CA3AF">(n)</span></td><td style="color:#6B7280;font-style:italic">/ˈnaɪt.laɪf/</td><td>Đời sống về đêm</td></tr><tr><td>go out <span style="font-size:11px;color:#9CA3AF">(phrasal v)</span></td><td style="color:#6B7280;font-style:italic">/ɡəʊ aʊt/</td><td>Đi chơi tối</td></tr><tr><td>livelier <span style="font-size:11px;color:#9CA3AF">(adj)</span></td><td style="color:#6B7280;font-style:italic">/ˈlaɪv.li.ər/</td><td>Sôi động hơn</td></tr><tr><td>catch a buzz <span style="font-size:11px;color:#9CA3AF">(phrase)</span></td><td style="color:#6B7280;font-style:italic">/kætʃ ə bʌz/</td><td>Cảm thấy hơi ngà ngà</td></tr><tr><td>unwind <span style="font-size:11px;color:#9CA3AF">(v)</span></td><td style="color:#6B7280;font-style:italic">/ˌʌnˈwaɪnd/</td><td>Thư giãn, xả stress</td></tr><tr><td>crowd <span style="font-size:11px;color:#9CA3AF">(n)</span></td><td style="color:#6B7280;font-style:italic">/kraʊd/</td><td>Đám đông</td></tr></tbody></table>
+</div></div>
+</div></div>
+
+<div class="vc-group"><button class="vc-group-btn" onclick="toggleVCGroup(this)"><span>Week 12–13</span><span><span class="vc-g-count">4 topics · 32 words</span> <span class="vc-g-arrow">▶</span></span></button><div class="vc-group-inner">
+<div class="vcollapse"><button class="vctoggle" onclick="toggleVC(this)"><span class="vc-arrow">▶</span><span style="font-size:11px;font-weight:600;color:#6B8AFF;margin-right:4px">CC</span>Housewarming Parties <span class="vc-count">8 từ</span></button><div class="itvgrid vchidden" style="display:none;padding:10px">
+<table style="width:100%;border-collapse:collapse;font-size:12.5px;margin-top:6px"><thead><tr style="background:#F6F4F0"><th style="text-align:left;padding:8px 10px;border-bottom:1.5px solid #E8E4DD;font-weight:600;color:#1C2130">Từ vựng</th><th style="text-align:left;padding:8px 10px;border-bottom:1.5px solid #E8E4DD;font-weight:600;color:#1C2130">Phiên âm</th><th style="text-align:left;padding:8px 10px;border-bottom:1.5px solid #E8E4DD;font-weight:600;color:#1C2130">Dịch nghĩa</th></tr></thead><tbody><tr><td>housewarming <span style="font-size:11px;color:#9CA3AF">(n)</span></td><td style="color:#6B7280;font-style:italic">/ˈhaʊs.wɔː.mɪŋ/</td><td>Tiệc mừng nhà mới</td></tr><tr><td>host <span style="font-size:11px;color:#9CA3AF">(v)</span></td><td style="color:#6B7280;font-style:italic">/həʊst/</td><td>Tổ chức, làm chủ nhà</td></tr><tr><td>move in <span style="font-size:11px;color:#9CA3AF">(phrasal v)</span></td><td style="color:#6B7280;font-style:italic">/muːv ɪn/</td><td>Chuyển đến ở</td></tr><tr><td>unpack <span style="font-size:11px;color:#9CA3AF">(v)</span></td><td style="color:#6B7280;font-style:italic">/ʌnˈpæk/</td><td>Dỡ đồ, sắp xếp đồ đạc</td></tr><tr><td>casual gathering <span style="font-size:11px;color:#9CA3AF">(phrase)</span></td><td style="color:#6B7280;font-style:italic">/ˈkæʒ.u.əl ˈɡæð.ər.ɪŋ/</td><td>Buổi tụ họp không trang trọng</td></tr><tr><td>practical gift <span style="font-size:11px;color:#9CA3AF">(phrase)</span></td><td style="color:#6B7280;font-style:italic">/ˈpræk.tɪ.kəl ɡɪft/</td><td>Món quà thiết thực</td></tr><tr><td>vibe <span style="font-size:11px;color:#9CA3AF">(n)</span></td><td style="color:#6B7280;font-style:italic">/vaɪb/</td><td>Không khí, cảm giác chung</td></tr><tr><td>setting <span style="font-size:11px;color:#9CA3AF">(n)</span></td><td style="color:#6B7280;font-style:italic">/ˈset.ɪŋ/</td><td>Bối cảnh, không gian</td></tr></tbody></table>
+</div></div>
+<div class="vcollapse"><button class="vctoggle" onclick="toggleVC(this)"><span class="vc-arrow">▶</span><span style="font-size:11px;font-weight:600;color:#6B8AFF;margin-right:4px">DD</span>Game Nights & Board Games with Friends <span class="vc-count">8 từ</span></button><div class="itvgrid vchidden" style="display:none;padding:10px">
+<table style="width:100%;border-collapse:collapse;font-size:12.5px;margin-top:6px"><thead><tr style="background:#F6F4F0"><th style="text-align:left;padding:8px 10px;border-bottom:1.5px solid #E8E4DD;font-weight:600;color:#1C2130">Từ vựng</th><th style="text-align:left;padding:8px 10px;border-bottom:1.5px solid #E8E4DD;font-weight:600;color:#1C2130">Phiên âm</th><th style="text-align:left;padding:8px 10px;border-bottom:1.5px solid #E8E4DD;font-weight:600;color:#1C2130">Dịch nghĩa</th></tr></thead><tbody><tr><td>board game <span style="font-size:11px;color:#9CA3AF">(phrase)</span></td><td style="color:#6B7280;font-style:italic">/bɔːd ɡeɪm/</td><td>Trò chơi trên bàn</td></tr><tr><td>competitive <span style="font-size:11px;color:#9CA3AF">(adj)</span></td><td style="color:#6B7280;font-style:italic">/kəmˈpet.ɪ.tɪv/</td><td>Máu ăn thua, cạnh tranh</td></tr><tr><td>trash talk <span style="font-size:11px;color:#9CA3AF">(phrase)</span></td><td style="color:#6B7280;font-style:italic">/træʃ tɔːk/</td><td>Nói khích, trêu chọc đối thủ</td></tr><tr><td>strategy <span style="font-size:11px;color:#9CA3AF">(n)</span></td><td style="color:#6B7280;font-style:italic">/ˈstræt.ə.dʒi/</td><td>Chiến lược</td></tr><tr><td>take turns <span style="font-size:11px;color:#9CA3AF">(phrase)</span></td><td style="color:#6B7280;font-style:italic">/teɪk tɜːnz/</td><td>Lần lượt thay phiên</td></tr><tr><td>host a game night <span style="font-size:11px;color:#9CA3AF">(phrase)</span></td><td style="color:#6B7280;font-style:italic">/həʊst ə ɡeɪm naɪt/</td><td>Tổ chức buổi tối chơi game</td></tr><tr><td>laid-back <span style="font-size:11px;color:#9CA3AF">(adj)</span></td><td style="color:#6B7280;font-style:italic">/leɪd bæk/</td><td>Thoải mái, dễ chịu</td></tr><tr><td>intense <span style="font-size:11px;color:#9CA3AF">(adj)</span></td><td style="color:#6B7280;font-style:italic">/ɪnˈtens/</td><td>Căng thẳng, kịch liệt</td></tr></tbody></table>
+</div></div>
+<div class="vcollapse"><button class="vctoggle" onclick="toggleVC(this)"><span class="vc-arrow">▶</span><span style="font-size:11px;font-weight:600;color:#6B8AFF;margin-right:4px">EE</span>Weddings & Life Events <span class="vc-count">8 từ</span></button><div class="itvgrid vchidden" style="display:none;padding:10px">
+<table style="width:100%;border-collapse:collapse;font-size:12.5px;margin-top:6px"><thead><tr style="background:#F6F4F0"><th style="text-align:left;padding:8px 10px;border-bottom:1.5px solid #E8E4DD;font-weight:600;color:#1C2130">Từ vựng</th><th style="text-align:left;padding:8px 10px;border-bottom:1.5px solid #E8E4DD;font-weight:600;color:#1C2130">Phiên âm</th><th style="text-align:left;padding:8px 10px;border-bottom:1.5px solid #E8E4DD;font-weight:600;color:#1C2130">Dịch nghĩa</th></tr></thead><tbody><tr><td>ceremony <span style="font-size:11px;color:#9CA3AF">(n)</span></td><td style="color:#6B7280;font-style:italic">/ˈser.ɪ.mə.ni/</td><td>Buổi lễ</td></tr><tr><td>reception <span style="font-size:11px;color:#9CA3AF">(n)</span></td><td style="color:#6B7280;font-style:italic">/rɪˈsep.ʃən/</td><td>Tiệc chiêu đãi</td></tr><tr><td>guest list <span style="font-size:11px;color:#9CA3AF">(phrase)</span></td><td style="color:#6B7280;font-style:italic">/ɡest lɪst/</td><td>Danh sách khách mời</td></tr><tr><td>vow <span style="font-size:11px;color:#9CA3AF">(n)</span></td><td style="color:#6B7280;font-style:italic">/vaʊ/</td><td>Lời thề</td></tr><tr><td>toast <span style="font-size:11px;color:#9CA3AF">(n)</span></td><td style="color:#6B7280;font-style:italic">/təʊst/</td><td>Lời chúc mừng, nâng ly</td></tr><tr><td>tradition <span style="font-size:11px;color:#9CA3AF">(n)</span></td><td style="color:#6B7280;font-style:italic">/trəˈdɪʃ.ən/</td><td>Truyền thống</td></tr><tr><td>elaborate <span style="font-size:11px;color:#9CA3AF">(adj)</span></td><td style="color:#6B7280;font-style:italic">/ɪˈlæb.ər.ət/</td><td>Cầu kỳ, công phu</td></tr><tr><td>intimate <span style="font-size:11px;color:#9CA3AF">(adj)</span></td><td style="color:#6B7280;font-style:italic">/ˈɪn.tɪ.mət/</td><td>Ấm cúng, thân mật</td></tr></tbody></table>
+</div></div>
+<div class="vcollapse"><button class="vctoggle" onclick="toggleVC(this)"><span class="vc-arrow">▶</span><span style="font-size:11px;font-weight:600;color:#6B8AFF;margin-right:4px">FF</span>Group Chats & Staying in the Loop <span class="vc-count">8 từ</span></button><div class="itvgrid vchidden" style="display:none;padding:10px">
+<table style="width:100%;border-collapse:collapse;font-size:12.5px;margin-top:6px"><thead><tr style="background:#F6F4F0"><th style="text-align:left;padding:8px 10px;border-bottom:1.5px solid #E8E4DD;font-weight:600;color:#1C2130">Từ vựng</th><th style="text-align:left;padding:8px 10px;border-bottom:1.5px solid #E8E4DD;font-weight:600;color:#1C2130">Phiên âm</th><th style="text-align:left;padding:8px 10px;border-bottom:1.5px solid #E8E4DD;font-weight:600;color:#1C2130">Dịch nghĩa</th></tr></thead><tbody><tr><td>group chat <span style="font-size:11px;color:#9CA3AF">(phrase)</span></td><td style="color:#6B7280;font-style:italic">/ɡruːp tʃæt/</td><td>Nhóm chat</td></tr><tr><td>notification <span style="font-size:11px;color:#9CA3AF">(n)</span></td><td style="color:#6B7280;font-style:italic">/ˌnəʊ.tɪ.fɪˈkeɪ.ʃən/</td><td>Thông báo</td></tr><tr><td>muted <span style="font-size:11px;color:#9CA3AF">(adj)</span></td><td style="color:#6B7280;font-style:italic">/ˈmjuː.tɪd/</td><td>Đã tắt thông báo</td></tr><tr><td>pin a message <span style="font-size:11px;color:#9CA3AF">(phrase)</span></td><td style="color:#6B7280;font-style:italic">/pɪn ə ˈmes.ɪdʒ/</td><td>Ghim tin nhắn</td></tr><tr><td>scroll back <span style="font-size:11px;color:#9CA3AF">(phrasal v)</span></td><td style="color:#6B7280;font-style:italic">/skrəʊl bæk/</td><td>Cuộn lại xem tin cũ</td></tr><tr><td>tagged <span style="font-size:11px;color:#9CA3AF">(adj)</span></td><td style="color:#6B7280;font-style:italic">/tæɡd/</td><td>Được gắn thẻ, nhắc tên</td></tr><tr><td>overwhelming <span style="font-size:11px;color:#9CA3AF">(adj)</span></td><td style="color:#6B7280;font-style:italic">/ˌəʊ.vəˈwel.mɪŋ/</td><td>Quá tải, choáng ngợp</td></tr><tr><td>catch up <span style="font-size:11px;color:#9CA3AF">(phrasal v)</span></td><td style="color:#6B7280;font-style:italic">/kætʃ ʌp/</td><td>Cập nhật, bắt kịp</td></tr></tbody></table>
+</div></div>
+</div></div>
+
+<div class="vc-group"><button class="vc-group-btn" onclick="toggleVCGroup(this)"><span>Week 14–15</span><span><span class="vc-g-count">4 topics · 34 words</span> <span class="vc-g-arrow">▶</span></span></button><div class="vc-group-inner">
+<div class="vcollapse"><button class="vctoggle" onclick="toggleVC(this)"><span class="vc-arrow">▶</span><span style="font-size:11px;font-weight:600;color:#6B8AFF;margin-right:4px">GG</span>Neighbors & Community Life <span class="vc-count">8 từ</span></button><div class="itvgrid vchidden" style="display:none;padding:10px">
+<table style="width:100%;border-collapse:collapse;font-size:12.5px;margin-top:6px"><thead><tr style="background:#F6F4F0"><th style="text-align:left;padding:8px 10px;border-bottom:1.5px solid #E8E4DD;font-weight:600;color:#1C2130">Từ vựng</th><th style="text-align:left;padding:8px 10px;border-bottom:1.5px solid #E8E4DD;font-weight:600;color:#1C2130">Phiên âm</th><th style="text-align:left;padding:8px 10px;border-bottom:1.5px solid #E8E4DD;font-weight:600;color:#1C2130">Dịch nghĩa</th></tr></thead><tbody><tr><td>neighbor <span style="font-size:11px;color:#9CA3AF">(n)</span></td><td style="color:#6B7280;font-style:italic">/ˈneɪ.bər/</td><td>Hàng xóm</td></tr><tr><td>apartment building <span style="font-size:11px;color:#9CA3AF">(phrase)</span></td><td style="color:#6B7280;font-style:italic">/əˈpɑːt.mənt ˈbɪl.dɪŋ/</td><td>Tòa chung cư</td></tr><tr><td>noise <span style="font-size:11px;color:#9CA3AF">(n)</span></td><td style="color:#6B7280;font-style:italic">/nɔɪz/</td><td>Tiếng ồn</td></tr><tr><td>community <span style="font-size:11px;color:#9CA3AF">(n)</span></td><td style="color:#6B7280;font-style:italic">/kəˈmjuː.nɪ.ti/</td><td>Cộng đồng</td></tr><tr><td>borrow <span style="font-size:11px;color:#9CA3AF">(v)</span></td><td style="color:#6B7280;font-style:italic">/ˈbɒr.əʊ/</td><td>Mượn</td></tr><tr><td>favor <span style="font-size:11px;color:#9CA3AF">(n)</span></td><td style="color:#6B7280;font-style:italic">/ˈfeɪ.vər/</td><td>Sự giúp đỡ, ơn huệ</td></tr><tr><td>familiar face <span style="font-size:11px;color:#9CA3AF">(phrase)</span></td><td style="color:#6B7280;font-style:italic">/fəˈmɪl.i.ər feɪs/</td><td>Gương mặt quen thuộc</td></tr><tr><td>block party <span style="font-size:11px;color:#9CA3AF">(phrase)</span></td><td style="color:#6B7280;font-style:italic">/blɒk ˈpɑː.ti/</td><td>Buổi tiệc khu phố</td></tr></tbody></table>
+</div></div>
+<div class="vcollapse"><button class="vctoggle" onclick="toggleVC(this)"><span class="vc-arrow">▶</span><span style="font-size:11px;font-weight:600;color:#6B8AFF;margin-right:4px">HH</span>Pets & Home Life <span class="vc-count">8 từ</span></button><div class="itvgrid vchidden" style="display:none;padding:10px">
+<table style="width:100%;border-collapse:collapse;font-size:12.5px;margin-top:6px"><thead><tr style="background:#F6F4F0"><th style="text-align:left;padding:8px 10px;border-bottom:1.5px solid #E8E4DD;font-weight:600;color:#1C2130">Từ vựng</th><th style="text-align:left;padding:8px 10px;border-bottom:1.5px solid #E8E4DD;font-weight:600;color:#1C2130">Phiên âm</th><th style="text-align:left;padding:8px 10px;border-bottom:1.5px solid #E8E4DD;font-weight:600;color:#1C2130">Dịch nghĩa</th></tr></thead><tbody><tr><td>adopt <span style="font-size:11px;color:#9CA3AF">(v)</span></td><td style="color:#6B7280;font-style:italic">/əˈdɒpt/</td><td>Nhận nuôi</td></tr><tr><td>routine <span style="font-size:11px;color:#9CA3AF">(n)</span></td><td style="color:#6B7280;font-style:italic">/ruːˈtiːn/</td><td>Thói quen hàng ngày</td></tr><tr><td>companionship <span style="font-size:11px;color:#9CA3AF">(n)</span></td><td style="color:#6B7280;font-style:italic">/kəmˈpæn.jən.ʃɪp/</td><td>Sự bầu bạn</td></tr><tr><td>responsibility <span style="font-size:11px;color:#9CA3AF">(n)</span></td><td style="color:#6B7280;font-style:italic">/rɪˌspɒn.sɪˈbɪl.ɪ.ti/</td><td>Trách nhiệm</td></tr><tr><td>vet <span style="font-size:11px;color:#9CA3AF">(n)</span></td><td style="color:#6B7280;font-style:italic">/vet/</td><td>Bác sĩ thú y</td></tr><tr><td>walk <span style="font-size:11px;color:#9CA3AF">(v)</span></td><td style="color:#6B7280;font-style:italic">/wɔːk/</td><td>Dắt đi dạo</td></tr><tr><td>feed <span style="font-size:11px;color:#9CA3AF">(v)</span></td><td style="color:#6B7280;font-style:italic">/fiːd/</td><td>Cho ăn</td></tr><tr><td>attachment <span style="font-size:11px;color:#9CA3AF">(n)</span></td><td style="color:#6B7280;font-style:italic">/əˈtætʃ.mənt/</td><td>Sự gắn bó</td></tr></tbody></table>
+</div></div>
+<div class="vcollapse"><button class="vctoggle" onclick="toggleVC(this)"><span class="vc-arrow">▶</span><span style="font-size:11px;font-weight:600;color:#6B8AFF;margin-right:4px">QQ</span>Gift-Giving Culture <span class="vc-count">8 từ</span></button><div class="itvgrid vchidden" style="display:none;padding:10px">
+<table style="width:100%;border-collapse:collapse;font-size:12.5px;margin-top:6px"><thead><tr style="background:#F6F4F0"><th style="text-align:left;padding:8px 10px;border-bottom:1.5px solid #E8E4DD;font-weight:600;color:#1C2130">Từ vựng</th><th style="text-align:left;padding:8px 10px;border-bottom:1.5px solid #E8E4DD;font-weight:600;color:#1C2130">Phiên âm</th><th style="text-align:left;padding:8px 10px;border-bottom:1.5px solid #E8E4DD;font-weight:600;color:#1C2130">Dịch nghĩa</th></tr></thead><tbody><tr><td>gesture <span style="font-size:11px;color:#9CA3AF">(n)</span></td><td style="color:#6B7280;font-style:italic">/ˈdʒes.tʃər/</td><td>Cử chỉ, hành động thể hiện tình cảm</td></tr><tr><td>thoughtful <span style="font-size:11px;color:#9CA3AF">(adj)</span></td><td style="color:#6B7280;font-style:italic">/ˈθɔːt.fəl/</td><td>Chu đáo, tinh tế</td></tr><tr><td>reciprocate <span style="font-size:11px;color:#9CA3AF">(v)</span></td><td style="color:#6B7280;font-style:italic">/rɪˈsɪp.rə.keɪt/</td><td>Đáp lại</td></tr><tr><td>obligation <span style="font-size:11px;color:#9CA3AF">(n)</span></td><td style="color:#6B7280;font-style:italic">/ˌɒb.lɪˈɡeɪ.ʃən/</td><td>Nghĩa vụ, trách nhiệm</td></tr><tr><td>presentation <span style="font-size:11px;color:#9CA3AF">(n)</span></td><td style="color:#6B7280;font-style:italic">/ˌprez.ənˈteɪ.ʃən/</td><td>Cách trình bày, đóng gói</td></tr><tr><td>sentimental <span style="font-size:11px;color:#9CA3AF">(adj)</span></td><td style="color:#6B7280;font-style:italic">/ˌsen.tɪˈmen.təl/</td><td>Mang tính tình cảm, kỷ niệm</td></tr><tr><td>practical <span style="font-size:11px;color:#9CA3AF">(adj)</span></td><td style="color:#6B7280;font-style:italic">/ˈpræk.tɪ.kəl/</td><td>Thiết thực</td></tr><tr><td>generous <span style="font-size:11px;color:#9CA3AF">(adj)</span></td><td style="color:#6B7280;font-style:italic">/ˈdʒen.ər.əs/</td><td>Hào phóng</td></tr></tbody></table>
+</div></div>
+<div class="vcollapse"><button class="vctoggle" onclick="toggleVC(this)"><span class="vc-arrow">▶</span><span style="font-size:11px;font-weight:600;color:#6B8AFF;margin-right:4px">RR</span>Picking a Thoughtful Gift (research) <span class="vc-count">10 từ</span></button><div class="itvgrid vchidden" style="display:none;padding:10px">
+<table style="width:100%;border-collapse:collapse;font-size:12.5px;margin-top:6px"><thead><tr style="background:#F6F4F0"><th style="text-align:left;padding:8px 10px;border-bottom:1.5px solid #E8E4DD;font-weight:600;color:#1C2130">Từ vựng</th><th style="text-align:left;padding:8px 10px;border-bottom:1.5px solid #E8E4DD;font-weight:600;color:#1C2130">Phiên âm</th><th style="text-align:left;padding:8px 10px;border-bottom:1.5px solid #E8E4DD;font-weight:600;color:#1C2130">Dịch nghĩa</th></tr></thead><tbody><tr><td>thoughtful <span style="font-size:11px;color:#9CA3AF">(adj)</span></td><td style="color:#6B7280;font-style:italic">/ˈθɔːt.fəl/</td><td>Chu đáo, tinh tế</td></tr><tr><td>budget <span style="font-size:11px;color:#9CA3AF">(n)</span></td><td style="color:#6B7280;font-style:italic">/ˈbʌdʒ.ɪt/</td><td>Ngân sách</td></tr><tr><td>last-minute <span style="font-size:11px;color:#9CA3AF">(adj)</span></td><td style="color:#6B7280;font-style:italic">/lɑːst ˈmɪn.ɪt/</td><td>Vào phút chót</td></tr><tr><td>wrap <span style="font-size:11px;color:#9CA3AF">(v)</span></td><td style="color:#6B7280;font-style:italic">/ræp/</td><td>Gói quà</td></tr><tr><td>surprise <span style="font-size:11px;color:#9CA3AF">(n)</span></td><td style="color:#6B7280;font-style:italic">/səˈpraɪz/</td><td>Sự bất ngờ</td></tr><tr><td>occasion <span style="font-size:11px;color:#9CA3AF">(n)</span></td><td style="color:#6B7280;font-style:italic">/əˈkeɪ.ʒən/</td><td>Dịp, sự kiện</td></tr><tr><td>personalize <span style="font-size:11px;color:#9CA3AF">(v)</span></td><td style="color:#6B7280;font-style:italic">/ˈpɜː.sən.əl.aɪz/</td><td>Cá nhân hoá</td></tr><tr><td>price tag <span style="font-size:11px;color:#9CA3AF">(phrase)</span></td><td style="color:#6B7280;font-style:italic">/praɪs tæɡ/</td><td>Giá tiền</td></tr><tr><td>sentimental value <span style="font-size:11px;color:#9CA3AF">(phrase)</span></td><td style="color:#6B7280;font-style:italic">/ˌsen.tɪˈmen.təl ˈvæl.juː/</td><td>Giá trị tinh thần</td></tr><tr><td>worth it <span style="font-size:11px;color:#9CA3AF">(phrase)</span></td><td style="color:#6B7280;font-style:italic">/wɜːθ ɪt/</td><td>Xứng đáng</td></tr></tbody></table>
+</div></div>
+</div></div>
+
+<div class="vc-group"><button class="vc-group-btn" onclick="toggleVCGroup(this)"><span>Week 16–17</span><span><span class="vc-g-count">4 topics · 36 words</span> <span class="vc-g-arrow">▶</span></span></button><div class="vc-group-inner">
+<div class="vcollapse"><button class="vctoggle" onclick="toggleVC(this)"><span class="vc-arrow">▶</span><span style="font-size:11px;font-weight:600;color:#6B8AFF;margin-right:4px">II</span>Onboarding & First Impressions at a New Job <span class="vc-count">8 từ</span></button><div class="itvgrid vchidden" style="display:none;padding:10px">
+<table style="width:100%;border-collapse:collapse;font-size:12.5px;margin-top:6px"><thead><tr style="background:#F6F4F0"><th style="text-align:left;padding:8px 10px;border-bottom:1.5px solid #E8E4DD;font-weight:600;color:#1C2130">Từ vựng</th><th style="text-align:left;padding:8px 10px;border-bottom:1.5px solid #E8E4DD;font-weight:600;color:#1C2130">Phiên âm</th><th style="text-align:left;padding:8px 10px;border-bottom:1.5px solid #E8E4DD;font-weight:600;color:#1C2130">Dịch nghĩa</th></tr></thead><tbody><tr><td>ramp up <span style="font-size:11px;color:#9CA3AF">(phrasal v)</span></td><td style="color:#6B7280;font-style:italic">/ræmp ʌp/</td><td>Tăng tốc, bắt nhịp</td></tr><tr><td>orientation <span style="font-size:11px;color:#9CA3AF">(n)</span></td><td style="color:#6B7280;font-style:italic">/ˌɔː.ri.enˈteɪ.ʃən/</td><td>Buổi định hướng</td></tr><tr><td>mentor <span style="font-size:11px;color:#9CA3AF">(n)</span></td><td style="color:#6B7280;font-style:italic">/ˈmen.tɔːr/</td><td>Người cố vấn</td></tr><tr><td>probation <span style="font-size:11px;color:#9CA3AF">(n)</span></td><td style="color:#6B7280;font-style:italic">/prəˈbeɪ.ʃən/</td><td>Thời gian thử việc</td></tr><tr><td>culture fit <span style="font-size:11px;color:#9CA3AF">(phrase)</span></td><td style="color:#6B7280;font-style:italic">/ˈkʌl.tʃər fɪt/</td><td>Sự phù hợp văn hóa công ty</td></tr><tr><td>shadow <span style="font-size:11px;color:#9CA3AF">(v)</span></td><td style="color:#6B7280;font-style:italic">/ˈʃæd.əʊ/</td><td>Đi theo học hỏi</td></tr><tr><td>checklist <span style="font-size:11px;color:#9CA3AF">(n)</span></td><td style="color:#6B7280;font-style:italic">/ˈtʃek.lɪst/</td><td>Danh sách kiểm tra</td></tr><tr><td>settle in <span style="font-size:11px;color:#9CA3AF">(phrasal v)</span></td><td style="color:#6B7280;font-style:italic">/ˈset.əl ɪn/</td><td>Ổn định, hòa nhập</td></tr></tbody></table>
+</div></div>
+<div class="vcollapse"><button class="vctoggle" onclick="toggleVC(this)"><span class="vc-arrow">▶</span><span style="font-size:11px;font-weight:600;color:#6B8AFF;margin-right:4px">JJ</span>Onboarding at a Company You Know (research) <span class="vc-count">10 từ</span></button><div class="itvgrid vchidden" style="display:none;padding:10px">
+<table style="width:100%;border-collapse:collapse;font-size:12.5px;margin-top:6px"><thead><tr style="background:#F6F4F0"><th style="text-align:left;padding:8px 10px;border-bottom:1.5px solid #E8E4DD;font-weight:600;color:#1C2130">Từ vựng</th><th style="text-align:left;padding:8px 10px;border-bottom:1.5px solid #E8E4DD;font-weight:600;color:#1C2130">Phiên âm</th><th style="text-align:left;padding:8px 10px;border-bottom:1.5px solid #E8E4DD;font-weight:600;color:#1C2130">Dịch nghĩa</th></tr></thead><tbody><tr><td>first week <span style="font-size:11px;color:#9CA3AF">(phrase)</span></td><td style="color:#6B7280;font-style:italic">/fɜːst wiːk/</td><td>Tuần đầu tiên</td></tr><tr><td>buddy system <span style="font-size:11px;color:#9CA3AF">(phrase)</span></td><td style="color:#6B7280;font-style:italic">/ˈbʌd.i ˈsɪs.təm/</td><td>Hệ thống bạn đồng hành hỗ trợ</td></tr><tr><td>introduced to <span style="font-size:11px;color:#9CA3AF">(phrase)</span></td><td style="color:#6B7280;font-style:italic">/ˌɪn.trəˈdjuːst tuː/</td><td>Được giới thiệu với</td></tr><tr><td>shadow <span style="font-size:11px;color:#9CA3AF">(v)</span></td><td style="color:#6B7280;font-style:italic">/ˈʃæd.əʊ/</td><td>Đi theo học hỏi</td></tr><tr><td>paperwork <span style="font-size:11px;color:#9CA3AF">(n)</span></td><td style="color:#6B7280;font-style:italic">/ˈpeɪ.pə.wɜːk/</td><td>Giấy tờ thủ tục</td></tr><tr><td>settle in <span style="font-size:11px;color:#9CA3AF">(phrasal v)</span></td><td style="color:#6B7280;font-style:italic">/ˈset.əl ɪn/</td><td>Ổn định, hòa nhập</td></tr><tr><td>overwhelmed <span style="font-size:11px;color:#9CA3AF">(adj)</span></td><td style="color:#6B7280;font-style:italic">/ˌəʊ.vəˈwelmd/</td><td>Choáng ngợp</td></tr><tr><td>first impression <span style="font-size:11px;color:#9CA3AF">(phrase)</span></td><td style="color:#6B7280;font-style:italic">/fɜːst ɪmˈpreʃ.ən/</td><td>Ấn tượng ban đầu</td></tr><tr><td>helpful <span style="font-size:11px;color:#9CA3AF">(adj)</span></td><td style="color:#6B7280;font-style:italic">/ˈhelp.fəl/</td><td>Hữu ích, nhiệt tình giúp đỡ</td></tr><tr><td>disorganized <span style="font-size:11px;color:#9CA3AF">(adj)</span></td><td style="color:#6B7280;font-style:italic">/dɪˈsɔː.ɡən.aɪzd/</td><td>Thiếu tổ chức</td></tr></tbody></table>
+</div></div>
+<div class="vcollapse"><button class="vctoggle" onclick="toggleVC(this)"><span class="vc-arrow">▶</span><span style="font-size:11px;font-weight:600;color:#6B8AFF;margin-right:4px">KK</span>Public Recognition & Rewards at Work <span class="vc-count">8 từ</span></button><div class="itvgrid vchidden" style="display:none;padding:10px">
+<table style="width:100%;border-collapse:collapse;font-size:12.5px;margin-top:6px"><thead><tr style="background:#F6F4F0"><th style="text-align:left;padding:8px 10px;border-bottom:1.5px solid #E8E4DD;font-weight:600;color:#1C2130">Từ vựng</th><th style="text-align:left;padding:8px 10px;border-bottom:1.5px solid #E8E4DD;font-weight:600;color:#1C2130">Phiên âm</th><th style="text-align:left;padding:8px 10px;border-bottom:1.5px solid #E8E4DD;font-weight:600;color:#1C2130">Dịch nghĩa</th></tr></thead><tbody><tr><td>recognition <span style="font-size:11px;color:#9CA3AF">(n)</span></td><td style="color:#6B7280;font-style:italic">/ˌrek.əɡˈnɪʃ.ən/</td><td>Sự ghi nhận</td></tr><tr><td>morale booster <span style="font-size:11px;color:#9CA3AF">(phrase)</span></td><td style="color:#6B7280;font-style:italic">/məˈrɑːl ˈbuː.stər/</td><td>Yếu tố nâng cao tinh thần</td></tr><tr><td>incentive <span style="font-size:11px;color:#9CA3AF">(n)</span></td><td style="color:#6B7280;font-style:italic">/ɪnˈsen.tɪv/</td><td>Động lực khuyến khích</td></tr><tr><td>spotlight <span style="font-size:11px;color:#9CA3AF">(n)</span></td><td style="color:#6B7280;font-style:italic">/ˈspɒt.laɪt/</td><td>Sự chú ý, ánh đèn sân khấu</td></tr><tr><td>token gesture <span style="font-size:11px;color:#9CA3AF">(phrase)</span></td><td style="color:#6B7280;font-style:italic">/ˈtəʊ.kən ˈdʒes.tʃər/</td><td>Hành động mang tính tượng trưng</td></tr><tr><td>meritocracy <span style="font-size:11px;color:#9CA3AF">(n)</span></td><td style="color:#6B7280;font-style:italic">/ˌmer.ɪˈtɒk.rə.si/</td><td>Chế độ trọng dụng nhân tài theo năng lực</td></tr><tr><td>shout-out <span style="font-size:11px;color:#9CA3AF">(n)</span></td><td style="color:#6B7280;font-style:italic">/ˈʃaʊt.aʊt/</td><td>Lời khen ngợi công khai</td></tr><tr><td>tenure <span style="font-size:11px;color:#9CA3AF">(n)</span></td><td style="color:#6B7280;font-style:italic">/ˈten.jər/</td><td>Thâm niên công tác</td></tr></tbody></table>
+</div></div>
+<div class="vcollapse"><button class="vctoggle" onclick="toggleVC(this)"><span class="vc-arrow">▶</span><span style="font-size:11px;font-weight:600;color:#6B8AFF;margin-right:4px">LL</span>How Recognition Works at a Company (research) <span class="vc-count">10 từ</span></button><div class="itvgrid vchidden" style="display:none;padding:10px">
+<table style="width:100%;border-collapse:collapse;font-size:12.5px;margin-top:6px"><thead><tr style="background:#F6F4F0"><th style="text-align:left;padding:8px 10px;border-bottom:1.5px solid #E8E4DD;font-weight:600;color:#1C2130">Từ vựng</th><th style="text-align:left;padding:8px 10px;border-bottom:1.5px solid #E8E4DD;font-weight:600;color:#1C2130">Phiên âm</th><th style="text-align:left;padding:8px 10px;border-bottom:1.5px solid #E8E4DD;font-weight:600;color:#1C2130">Dịch nghĩa</th></tr></thead><tbody><tr><td>bonus <span style="font-size:11px;color:#9CA3AF">(n)</span></td><td style="color:#6B7280;font-style:italic">/ˈbəʊ.nəs/</td><td>Tiền thưởng</td></tr><tr><td>shout-out <span style="font-size:11px;color:#9CA3AF">(n)</span></td><td style="color:#6B7280;font-style:italic">/ˈʃaʊt.aʊt/</td><td>Lời khen ngợi công khai</td></tr><tr><td>employee of the month <span style="font-size:11px;color:#9CA3AF">(phrase)</span></td><td style="color:#6B7280;font-style:italic">/ɪmˈplɔɪ.iː əv ðə mʌnθ/</td><td>Nhân viên xuất sắc của tháng</td></tr><tr><td>appreciate <span style="font-size:11px;color:#9CA3AF">(v)</span></td><td style="color:#6B7280;font-style:italic">/əˈpriː.ʃi.eɪt/</td><td>Trân trọng</td></tr><tr><td>deserve <span style="font-size:11px;color:#9CA3AF">(v)</span></td><td style="color:#6B7280;font-style:italic">/dɪˈzɜːv/</td><td>Xứng đáng</td></tr><tr><td>motivating <span style="font-size:11px;color:#9CA3AF">(adj)</span></td><td style="color:#6B7280;font-style:italic">/ˈməʊ.tɪ.veɪ.tɪŋ/</td><td>Tạo động lực</td></tr><tr><td>overlooked <span style="font-size:11px;color:#9CA3AF">(adj)</span></td><td style="color:#6B7280;font-style:italic">/ˌəʊ.vəˈlʊkt/</td><td>Bị bỏ qua, không được để ý</td></tr><tr><td>reward <span style="font-size:11px;color:#9CA3AF">(n)</span></td><td style="color:#6B7280;font-style:italic">/rɪˈwɔːd/</td><td>Phần thưởng</td></tr><tr><td>public praise <span style="font-size:11px;color:#9CA3AF">(phrase)</span></td><td style="color:#6B7280;font-style:italic">/ˈpʌb.lɪk preɪz/</td><td>Lời khen trước tập thể</td></tr><tr><td>genuine <span style="font-size:11px;color:#9CA3AF">(adj)</span></td><td style="color:#6B7280;font-style:italic">/ˈdʒen.ju.ɪn/</td><td>Chân thành, thật lòng</td></tr></tbody></table>
+</div></div>
+</div></div>
+
+<div class="vc-group"><button class="vc-group-btn" onclick="toggleVCGroup(this)"><span>Week 18–19</span><span><span class="vc-g-count">4 topics · 36 words</span> <span class="vc-g-arrow">▶</span></span></button><div class="vc-group-inner">
+<div class="vcollapse"><button class="vctoggle" onclick="toggleVC(this)"><span class="vc-arrow">▶</span><span style="font-size:11px;font-weight:600;color:#6B8AFF;margin-right:4px">MM</span>Cross-functional Collaboration <span class="vc-count">8 từ</span></button><div class="itvgrid vchidden" style="display:none;padding:10px">
+<table style="width:100%;border-collapse:collapse;font-size:12.5px;margin-top:6px"><thead><tr style="background:#F6F4F0"><th style="text-align:left;padding:8px 10px;border-bottom:1.5px solid #E8E4DD;font-weight:600;color:#1C2130">Từ vựng</th><th style="text-align:left;padding:8px 10px;border-bottom:1.5px solid #E8E4DD;font-weight:600;color:#1C2130">Phiên âm</th><th style="text-align:left;padding:8px 10px;border-bottom:1.5px solid #E8E4DD;font-weight:600;color:#1C2130">Dịch nghĩa</th></tr></thead><tbody><tr><td>silo <span style="font-size:11px;color:#9CA3AF">(n)</span></td><td style="color:#6B7280;font-style:italic">/ˈsaɪ.ləʊ/</td><td>Sự biệt lập giữa các phòng ban</td></tr><tr><td>stakeholder <span style="font-size:11px;color:#9CA3AF">(n)</span></td><td style="color:#6B7280;font-style:italic">/ˈsteɪk.həʊl.dər/</td><td>Bên liên quan</td></tr><tr><td>handoff <span style="font-size:11px;color:#9CA3AF">(n)</span></td><td style="color:#6B7280;font-style:italic">/ˈhænd.ɒf/</td><td>Sự bàn giao</td></tr><tr><td>cross-functional <span style="font-size:11px;color:#9CA3AF">(adj)</span></td><td style="color:#6B7280;font-style:italic">/krɒs ˈfʌŋk.ʃən.əl/</td><td>Liên phòng ban, đa chức năng</td></tr><tr><td>buy-in <span style="font-size:11px;color:#9CA3AF">(n)</span></td><td style="color:#6B7280;font-style:italic">/ˈbaɪ.ɪn/</td><td>Sự đồng thuận, ủng hộ</td></tr><tr><td>dependency <span style="font-size:11px;color:#9CA3AF">(n)</span></td><td style="color:#6B7280;font-style:italic">/dɪˈpen.dən.si/</td><td>Sự phụ thuộc</td></tr><tr><td>bottleneck <span style="font-size:11px;color:#9CA3AF">(n)</span></td><td style="color:#6B7280;font-style:italic">/ˈbɒt.əl.nek/</td><td>Điểm nghẽn</td></tr><tr><td>sync <span style="font-size:11px;color:#9CA3AF">(v)</span></td><td style="color:#6B7280;font-style:italic">/sɪŋk/</td><td>Đồng bộ</td></tr></tbody></table>
+</div></div>
+<div class="vcollapse"><button class="vctoggle" onclick="toggleVC(this)"><span class="vc-arrow">▶</span><span style="font-size:11px;font-weight:600;color:#6B8AFF;margin-right:4px">NN</span>How Two Teams Work Together (research) <span class="vc-count">10 từ</span></button><div class="itvgrid vchidden" style="display:none;padding:10px">
+<table style="width:100%;border-collapse:collapse;font-size:12.5px;margin-top:6px"><thead><tr style="background:#F6F4F0"><th style="text-align:left;padding:8px 10px;border-bottom:1.5px solid #E8E4DD;font-weight:600;color:#1C2130">Từ vựng</th><th style="text-align:left;padding:8px 10px;border-bottom:1.5px solid #E8E4DD;font-weight:600;color:#1C2130">Phiên âm</th><th style="text-align:left;padding:8px 10px;border-bottom:1.5px solid #E8E4DD;font-weight:600;color:#1C2130">Dịch nghĩa</th></tr></thead><tbody><tr><td>shared project <span style="font-size:11px;color:#9CA3AF">(phrase)</span></td><td style="color:#6B7280;font-style:italic">/ʃeəd ˈprɒdʒ.ekt/</td><td>Dự án chung</td></tr><tr><td>miscommunication <span style="font-size:11px;color:#9CA3AF">(n)</span></td><td style="color:#6B7280;font-style:italic">/ˌmɪs.kə.mjuː.nɪˈkeɪ.ʃən/</td><td>Sự hiểu lầm trong giao tiếp</td></tr><tr><td>different priorities <span style="font-size:11px;color:#9CA3AF">(phrase)</span></td><td style="color:#6B7280;font-style:italic">/ˈdɪf.ər.ənt praɪˈɒr.ɪ.tiz/</td><td>Ưu tiên khác nhau</td></tr><tr><td>check-in meeting <span style="font-size:11px;color:#9CA3AF">(phrase)</span></td><td style="color:#6B7280;font-style:italic">/tʃek ɪn ˈmiː.tɪŋ/</td><td>Cuộc họp cập nhật tiến độ</td></tr><tr><td>handoff <span style="font-size:11px;color:#9CA3AF">(n)</span></td><td style="color:#6B7280;font-style:italic">/ˈhænd.ɒf/</td><td>Sự bàn giao</td></tr><tr><td>teamwork <span style="font-size:11px;color:#9CA3AF">(n)</span></td><td style="color:#6B7280;font-style:italic">/ˈtiːm.wɜːk/</td><td>Làm việc nhóm</td></tr><tr><td>friction <span style="font-size:11px;color:#9CA3AF">(n)</span></td><td style="color:#6B7280;font-style:italic">/ˈfrɪk.ʃən/</td><td>Sự va chạm, bất đồng</td></tr><tr><td>smooth <span style="font-size:11px;color:#9CA3AF">(adj)</span></td><td style="color:#6B7280;font-style:italic">/smuːð/</td><td>Suôn sẻ</td></tr><tr><td>delay <span style="font-size:11px;color:#9CA3AF">(n)</span></td><td style="color:#6B7280;font-style:italic">/dɪˈleɪ/</td><td>Sự chậm trễ</td></tr><tr><td>on the same page <span style="font-size:11px;color:#9CA3AF">(phrase)</span></td><td style="color:#6B7280;font-style:italic">/ɒn ðə seɪm peɪdʒ/</td><td>Cùng chung quan điểm, hiểu biết</td></tr></tbody></table>
+</div></div>
+<div class="vcollapse"><button class="vctoggle" onclick="toggleVC(this)"><span class="vc-arrow">▶</span><span style="font-size:11px;font-weight:600;color:#6B8AFF;margin-right:4px">OO</span>Negotiating Salary & Promotions <span class="vc-count">8 từ</span></button><div class="itvgrid vchidden" style="display:none;padding:10px">
+<table style="width:100%;border-collapse:collapse;font-size:12.5px;margin-top:6px"><thead><tr style="background:#F6F4F0"><th style="text-align:left;padding:8px 10px;border-bottom:1.5px solid #E8E4DD;font-weight:600;color:#1C2130">Từ vựng</th><th style="text-align:left;padding:8px 10px;border-bottom:1.5px solid #E8E4DD;font-weight:600;color:#1C2130">Phiên âm</th><th style="text-align:left;padding:8px 10px;border-bottom:1.5px solid #E8E4DD;font-weight:600;color:#1C2130">Dịch nghĩa</th></tr></thead><tbody><tr><td>leverage <span style="font-size:11px;color:#9CA3AF">(n)</span></td><td style="color:#6B7280;font-style:italic">/ˈliː.vər.ɪdʒ/</td><td>Lợi thế thương lượng</td></tr><tr><td>market rate <span style="font-size:11px;color:#9CA3AF">(phrase)</span></td><td style="color:#6B7280;font-style:italic">/ˈmɑː.kɪt reɪt/</td><td>Mức lương thị trường</td></tr><tr><td>counteroffer <span style="font-size:11px;color:#9CA3AF">(n)</span></td><td style="color:#6B7280;font-style:italic">/ˈkaʊn.tər.ɒf.ər/</td><td>Đề nghị phản hồi</td></tr><tr><td>ceiling <span style="font-size:11px;color:#9CA3AF">(n)</span></td><td style="color:#6B7280;font-style:italic">/ˈsiː.lɪŋ/</td><td>Giới hạn trên</td></tr><tr><td>negotiate <span style="font-size:11px;color:#9CA3AF">(v)</span></td><td style="color:#6B7280;font-style:italic">/nɪˈɡəʊ.ʃi.eɪt/</td><td>Đàm phán</td></tr><tr><td>benchmark <span style="font-size:11px;color:#9CA3AF">(n)</span></td><td style="color:#6B7280;font-style:italic">/ˈbentʃ.mɑːk/</td><td>Mốc chuẩn để so sánh</td></tr><tr><td>justify <span style="font-size:11px;color:#9CA3AF">(v)</span></td><td style="color:#6B7280;font-style:italic">/ˈdʒʌs.tɪ.faɪ/</td><td>Biện minh, chứng minh hợp lý</td></tr><tr><td>walk away <span style="font-size:11px;color:#9CA3AF">(phrasal v)</span></td><td style="color:#6B7280;font-style:italic">/wɔːk əˈweɪ/</td><td>Từ bỏ, rời đi</td></tr></tbody></table>
+</div></div>
+<div class="vcollapse"><button class="vctoggle" onclick="toggleVC(this)"><span class="vc-arrow">▶</span><span style="font-size:11px;font-weight:600;color:#6B8AFF;margin-right:4px">PP</span>A Successful Salary Negotiation Story (research) <span class="vc-count">10 từ</span></button><div class="itvgrid vchidden" style="display:none;padding:10px">
+<table style="width:100%;border-collapse:collapse;font-size:12.5px;margin-top:6px"><thead><tr style="background:#F6F4F0"><th style="text-align:left;padding:8px 10px;border-bottom:1.5px solid #E8E4DD;font-weight:600;color:#1C2130">Từ vựng</th><th style="text-align:left;padding:8px 10px;border-bottom:1.5px solid #E8E4DD;font-weight:600;color:#1C2130">Phiên âm</th><th style="text-align:left;padding:8px 10px;border-bottom:1.5px solid #E8E4DD;font-weight:600;color:#1C2130">Dịch nghĩa</th></tr></thead><tbody><tr><td>raise <span style="font-size:11px;color:#9CA3AF">(n)</span></td><td style="color:#6B7280;font-style:italic">/reɪz/</td><td>Khoản tăng lương</td></tr><tr><td>counteroffer <span style="font-size:11px;color:#9CA3AF">(n)</span></td><td style="color:#6B7280;font-style:italic">/ˈkaʊn.tər.ɒf.ər/</td><td>Đề nghị phản hồi</td></tr><tr><td>nervous <span style="font-size:11px;color:#9CA3AF">(adj)</span></td><td style="color:#6B7280;font-style:italic">/ˈnɜː.vəs/</td><td>Lo lắng</td></tr><tr><td>confident <span style="font-size:11px;color:#9CA3AF">(adj)</span></td><td style="color:#6B7280;font-style:italic">/ˈkɒn.fɪ.dənt/</td><td>Tự tin</td></tr><tr><td>deserve <span style="font-size:11px;color:#9CA3AF">(v)</span></td><td style="color:#6B7280;font-style:italic">/dɪˈzɜːv/</td><td>Xứng đáng</td></tr><tr><td>ask for <span style="font-size:11px;color:#9CA3AF">(phrasal v)</span></td><td style="color:#6B7280;font-style:italic">/ɑːsk fɔːr/</td><td>Yêu cầu, đề nghị</td></tr><tr><td>successful <span style="font-size:11px;color:#9CA3AF">(adj)</span></td><td style="color:#6B7280;font-style:italic">/səkˈses.fəl/</td><td>Thành công</td></tr><tr><td>turned down <span style="font-size:11px;color:#9CA3AF">(phrase)</span></td><td style="color:#6B7280;font-style:italic">/tɜːnd daʊn/</td><td>Bị từ chối</td></tr><tr><td>worth it <span style="font-size:11px;color:#9CA3AF">(phrase)</span></td><td style="color:#6B7280;font-style:italic">/wɜːθ ɪt/</td><td>Xứng đáng với công sức</td></tr><tr><td>prepared <span style="font-size:11px;color:#9CA3AF">(adj)</span></td><td style="color:#6B7280;font-style:italic">/prɪˈpeəd/</td><td>Đã chuẩn bị kỹ</td></tr></tbody></table>
+</div></div>
+</div></div>
 </div>
 </div>
 </div>
@@ -442,18 +534,43 @@ id="mp1">
 <div class="main-panel" id="mp2">
     <!-- 4-WEEK PLAN -->
 <div class="sec" style="border-bottom:none;padding-bottom:2.5rem">
-  <div class="slabel">4-Week Schedule</div>
-  <div class="wtabs">
-    <button class="wtab on" onclick="showW(1,this)">Week 1</button>
-    <button class="wtab" onclick="showW(2,this)">Week 2</button>
-    <button class="wtab" onclick="showW(3,this)">Week 3</button>
-    <button class="wtab" onclick="showW(4,this)">Week 4</button>
-    <button class="wtab" onclick="showW(5,this)">Week 5</button>
-    <button class="wtab" onclick="showW(6,this)">Week 6</button>
-    <button class="wtab" onclick="showW(7,this)">Week 7</button>
-    <button class="wtab" onclick="showW(8,this)">Week 8</button>
-    <button class="wtab" onclick="showW(9,this)">Week 9</button>
+  <div class="slabel" style="display:none">4-Week Schedule</div>
+  <div class="wgroup-headers" id="wgroupHeaders">
+    <button class="wgroup-head open" onclick="toggleWGroup(1,this)"><span>Week 1–5</span><span class="wg-chev">▸</span></button>
+    <button class="wgroup-head" onclick="toggleWGroup(2,this)"><span>Week 6–10</span><span class="wg-chev">▸</span></button>
+    <button class="wgroup-head" onclick="toggleWGroup(3,this)"><span>Week 11–15</span><span class="wg-chev">▸</span></button>
+    <button class="wgroup-head" onclick="toggleWGroup(4,this)"><span>Week 16–19</span><span class="wg-chev">▸</span></button>
   </div>
+  <div class="wgroup-bodies" id="wgroupBodies">
+    <div class="wgroup-body open" id="wgbody1">
+      <button class="wtab on" onclick="showW(1,this)">Week 1</button>
+      <button class="wtab" onclick="showW(2,this)">Week 2</button>
+      <button class="wtab" onclick="showW(3,this)">Week 3</button>
+      <button class="wtab" onclick="showW(4,this)">Week 4</button>
+      <button class="wtab" onclick="showW(5,this)">Week 5</button>
+    </div>
+    <div class="wgroup-body" id="wgbody2">
+      <button class="wtab" onclick="showW(6,this)">Week 6</button>
+      <button class="wtab" onclick="showW(7,this)">Week 7</button>
+      <button class="wtab" onclick="showW(8,this)">Week 8</button>
+      <button class="wtab" onclick="showW(9,this)">Week 9</button>
+      <button class="wtab" onclick="showW(10,this)">Week 10</button>
+    </div>
+    <div class="wgroup-body" id="wgbody3">
+      <button class="wtab" onclick="showW(11,this)">Week 11</button>
+      <button class="wtab" onclick="showW(12,this)">Week 12</button>
+      <button class="wtab" onclick="showW(13,this)">Week 13</button>
+      <button class="wtab" onclick="showW(14,this)">Week 14</button>
+      <button class="wtab" onclick="showW(15,this)">Week 15</button>
+    </div>
+    <div class="wgroup-body" id="wgbody4">
+      <button class="wtab" onclick="showW(16,this)">Week 16</button>
+      <button class="wtab" onclick="showW(17,this)">Week 17</button>
+      <button class="wtab" onclick="showW(18,this)">Week 18</button>
+      <button class="wtab" onclick="showW(19,this)">Week 19</button>
+    </div>
+  </div>
+
 
   <!-- W1 -->
   <div class="wpanel on" id="w1">
@@ -1526,6 +1643,831 @@ id="mp1">
       </div>
     </div>
   </div>
+  <div class="wpanel" id="w10">
+    <div class="sc2">
+      <div class="shead"><div class="sn2 ng">28</div><div class="sbadge bg">Speaking</div><div class="stitle">Topic 1 &amp; Topic 2 · Speaking practice</div></div>
+      <div class="sbody">
+        <div class="tblock" style="margin-bottom:.85rem">
+          <div class="tlabel"><span class="tdot"></span>Topic Y · Making Small Talk &amp; Meeting New People</div>
+          <div class="qlist">
+            <div class="qi-wrap">
+              <div class="qi-q" onclick="toggleAns(this)"><span class="qi-q-text">How do you feel about making small talk with people you don't know well?</span><span class="qi-toggle">Example ▾</span></div>
+              <div class="qi-ans">A little awkward at first, but I've gotten more comfortable with practice. I've learned that most small talk isn't really about the topic — it's just a way of signaling that you're friendly and open to a longer conversation.</div>
+            </div>
+            <div class="qi-wrap">
+              <div class="qi-q" onclick="toggleAns(this)"><span class="qi-q-text">What's your go-to topic when you're trying to start a conversation with someone new?</span><span class="qi-toggle">Example ▾</span></div>
+              <div class="qi-ans">Usually something low-stakes and situational — the event we're both at, or a shared connection. Asking a genuine question about them works better than talking about myself first.</div>
+            </div>
+            <div class="qi-wrap">
+              <div class="qi-q" onclick="toggleAns(this)"><span class="qi-q-text">Do you think small talk is a waste of time, or does it serve a real purpose?</span><span class="qi-toggle">Example ▾</span></div>
+              <div class="qi-ans">It has a real purpose, even if it feels shallow. Small talk is how trust gets built before anything deeper can happen — very few close relationships start with a serious conversation on day one.</div>
+            </div>
+            <div class="qi-wrap">
+              <div class="qi-q" onclick="toggleAns(this)"><span class="qi-q-text">How do you keep a conversation going when there's an awkward silence?</span><span class="qi-toggle">Example ▾</span></div>
+              <div class="qi-ans">I usually ask a follow-up question about something they just said, rather than switching to a new topic. It shows I was actually listening, and it almost always gives the conversation somewhere new to go.</div>
+            </div>
+          </div>
+          <button class="vtoggle" onclick="toggleV(this)">Vocabulary</button>
+          <div class="vlist"><div class="vc">icebreaker</div><div class="vc">small talk</div><div class="vc">awkward silence</div><div class="vc">common ground</div><div class="vc">mingle</div><div class="vc">approachable</div><div class="vc">rapport</div><div class="vc">follow-up</div></div>
+        </div>
+        <div class="tblock">
+          <div class="tlabel"><span class="tdot"></span>Topic 2 · 4-minute continuous speaking</div>
+          <div class="demo-wrap">
+            <div class="demo-header"><span style="font-size:18px"></span><div class="demo-htitle">Cue Card: Describe a time you made a new friend or connection unexpectedly</div><div class="demo-hsub">2-min prep · 4-min speaking</div></div>
+            <div class="demo-body">
+              <div class="dslabel" style="margin-bottom:.5rem">Describe: a time you met someone new and it turned into a real connection</div>
+              <div class="qlist" style="margin-bottom:.75rem"><div class="dq-p">• Where and how you met them</div><div class="dq-p">• What made the conversation click</div><div class="dq-p">• What happened after that first meeting</div><div class="dq-p">• Whether you're still in touch today</div></div>
+              <div class="dslabel">How to structure your 4 minutes</div>
+              <div class="qlist" style="margin-bottom:.75rem"><div class="qi"><em>Minute 1: Set the scene — where and how you met</em></div><div class="qi"><em>Minute 2: The conversation — what made it click</em></div><div class="qi"><em>Minute 3: What happened next</em></div><div class="qi"><em>Minute 4: Reflection — what you learned about connecting with people</em></div></div>
+              <div class="dslabel">Follow-up questions</div>
+              <div class="qlist">
+            <div class="qi-wrap">
+              <div class="qi-q" onclick="toggleAns(this)"><span class="qi-q-text">Do you find it easier to make friends now than when you were younger?</span><span class="qi-toggle">Example ▾</span></div>
+              <div class="qi-ans">Harder, honestly. As an adult, there are fewer built-in situations — like school — where friendships form naturally, so I have to be more intentional about it now.</div>
+            </div>
+            <div class="qi-wrap">
+              <div class="qi-q" onclick="toggleAns(this)"><span class="qi-q-text">What's one habit that's helped you build new connections?</span><span class="qi-toggle">Example ▾</span></div>
+              <div class="qi-ans">Following up. I used to meet someone interesting and never speak to them again. Now I try to send one message within a few days, even something small, just to keep the door open.</div>
+            </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="sc2">
+      <div class="shead"><div class="sn2 ng">29</div><div class="sbadge bg">Speaking</div><div class="stitle">Topic 1 &amp; Topic 2 · Speaking &amp; Research Discussion</div></div>
+      <div class="sbody">
+        <div class="tblock" style="margin-bottom:.85rem">
+          <div class="tlabel"><span class="tdot"></span>Topic Z · Friendships &amp; Staying Connected as an Adult</div>
+          <div class="qlist">
+            <div class="qi-wrap">
+              <div class="qi-q" onclick="toggleAns(this)"><span class="qi-q-text">Do you find it harder to maintain friendships now compared to when you were younger?</span><span class="qi-toggle">Example ▾</span></div>
+              <div class="qi-ans">Much harder. Life used to organize friendships for you — school, shared schedules. Now it takes real effort to stay close to people, since nothing forces you to see them regularly anymore.</div>
+            </div>
+            <div class="qi-wrap">
+              <div class="qi-q" onclick="toggleAns(this)"><span class="qi-q-text">How do you stay in touch with friends who live far away?</span><span class="qi-toggle">Example ▾</span></div>
+              <div class="qi-ans">Mostly through short voice messages rather than texts — it feels more personal and takes less effort than typing. I also try to schedule a video call every couple of months instead of leaving it open-ended.</div>
+            </div>
+            <div class="qi-wrap">
+              <div class="qi-q" onclick="toggleAns(this)"><span class="qi-q-text">Have you ever drifted apart from a close friend? What happened?</span><span class="qi-toggle">Example ▾</span></div>
+              <div class="qi-ans">Yes, gradually rather than because of any conflict. We both got busy with work and just stopped reaching out. Looking back, neither of us made the first move, and the gap slowly became normal.</div>
+            </div>
+            <div class="qi-wrap">
+              <div class="qi-q" onclick="toggleAns(this)"><span class="qi-q-text">What do you think makes a friendship last long-term?</span><span class="qi-toggle">Example ▾</span></div>
+              <div class="qi-ans">Low-pressure consistency more than big gestures. The friendships that have lasted for me are the ones where we can go months without talking and pick up right where we left off, without either of us keeping score.</div>
+            </div>
+          </div>
+          <button class="vtoggle" onclick="toggleV(this)">Vocabulary</button>
+          <div class="vlist"><div class="vc">drift apart</div><div class="vc">catch up</div><div class="vc">close-knit</div><div class="vc">effort</div><div class="vc">reconnect</div><div class="vc">circle of friends</div><div class="vc">quality time</div><div class="vc">reach out</div></div>
+        </div>
+        <div class="tblock">
+          <div class="tlabel"><span class="tdot"></span>Topic 2 · Research &amp; Discuss</div>
+          <div class="demo-wrap">
+            <div class="demo-header"><span style="font-size:18px"></span><div class="demo-htitle">Research Task: How people you know stay in touch with old friends</div><div class="demo-hsub">Independent research · 4 questions for host discussion</div></div>
+            <div class="demo-body">
+              <div class="dslabel" style="margin-bottom:.5rem">Task: Ask two or three people you know — friends, colleagues, or family — how they maintain friendships despite busy schedules, or reflect on your own habits. Come ready to share what you found.</div>
+              <button class="vtoggle" onclick="toggleV(this)">Vocabulary</button>
+              <div class="vlist"><div class="vc">keep in touch</div><div class="vc">mutual friend</div><div class="vc">catch-up call</div><div class="vc">nostalgia</div><div class="vc">prioritize</div><div class="vc">checked in</div><div class="vc">close bond</div><div class="vc">drift apart</div><div class="vc">reconnect</div><div class="vc">make time</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="sc2">
+      <div class="shead"><div class="sn2 na">30</div><div class="sbadge ba">Presentation</div><div class="stitle">Is Quiet Quitting Fair — or Just an Excuse for Laziness?</div></div>
+      <div class="sbody">
+        <div class="pcard" style="margin-bottom:.85rem">
+          <div class="ptitle">Is Quiet Quitting Fair — or Just an Excuse for Laziness?</div>
+          <div class="pdesc">Take a clear position on quiet quitting — doing only what's required and no more. Is it a reasonable boundary against unpaid overwork, or a lack of professional commitment? Use PREP and real or hypothetical examples.<span class="ptip">PREP structure</span><span class="ptip">Q&amp;A · Post-presentation</span></div>
+        </div>
+        <div class="tblock">
+          <div class="tlabel"><span class="tdot"></span>Q&amp;A · Post-presentation</div>
+          <div class="qlist">
+            <div class="qi" style="margin-bottom:4px">What is your overall position on quiet quitting?</div>
+            <div class="qi" style="margin-bottom:4px">What is the strongest argument that it's a reasonable boundary?</div>
+            <div class="qi" style="margin-bottom:4px">What is the strongest argument that it reflects a lack of commitment?</div>
+            <div class="qi" style="margin-bottom:4px">Would your opinion change depending on how the employee is compensated?</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="wpanel" id="w11">
+    <div class="sc2">
+      <div class="shead"><div class="sn2 ng">31</div><div class="sbadge bg">Speaking</div><div class="stitle">Topic 1 &amp; Topic 2 · Speaking practice</div></div>
+      <div class="sbody">
+        <div class="tblock" style="margin-bottom:.85rem">
+          <div class="tlabel"><span class="tdot"></span>Topic AA · Coffee Culture &amp; Casual Meetups</div>
+          <div class="qlist">
+            <div class="qi-wrap">
+              <div class="qi-q" onclick="toggleAns(this)"><span class="qi-q-text">Do you have a regular coffee shop you go to?</span><span class="qi-toggle">Example ▾</span></div>
+              <div class="qi-ans">Yes, there's a small place near my apartment I go to almost every weekend. The coffee's good, but honestly it's more about the routine — the same seat, the same barista who already knows my order.</div>
+            </div>
+            <div class="qi-wrap">
+              <div class="qi-q" onclick="toggleAns(this)"><span class="qi-q-text">Do you prefer meeting friends at a coffee shop or somewhere else?</span><span class="qi-toggle">Example ▾</span></div>
+              <div class="qi-ans">Coffee shops, most of the time. It's low commitment — you can stay for twenty minutes or three hours, and nobody feels obligated either way. That flexibility makes it my default for casual catch-ups.</div>
+            </div>
+            <div class="qi-wrap">
+              <div class="qi-q" onclick="toggleAns(this)"><span class="qi-q-text">What do you think makes a coffee shop a good place to hang out, beyond the coffee itself?</span><span class="qi-toggle">Example ▾</span></div>
+              <div class="qi-ans">Honestly, the noise level matters more than people realize. Somewhere too quiet feels awkward for conversation, somewhere too loud makes you shout. The best spots have just enough background noise to feel comfortable.</div>
+            </div>
+            <div class="qi-wrap">
+              <div class="qi-q" onclick="toggleAns(this)"><span class="qi-q-text">Do you think coffee culture in Vietnam is different from other countries?</span><span class="qi-toggle">Example ▾</span></div>
+              <div class="qi-ans">I think so — cafes here double as informal offices and meeting spots in a way that feels more central to daily life than in some other places, where coffee is more of a quick grab-and-go.</div>
+            </div>
+          </div>
+          <button class="vtoggle" onclick="toggleV(this)">Vocabulary</button>
+          <div class="vlist"><div class="vc">regular spot</div><div class="vc">casual</div><div class="vc">catch-up</div><div class="vc">barista</div><div class="vc">ambiance</div><div class="vc">grab a coffee</div><div class="vc">hang out</div><div class="vc">low commitment</div></div>
+        </div>
+        <div class="tblock">
+          <div class="tlabel"><span class="tdot"></span>Topic 2 · 4-minute continuous speaking</div>
+          <div class="demo-wrap">
+            <div class="demo-header"><span style="font-size:18px"></span><div class="demo-htitle">Cue Card: Describe your favorite place to meet friends casually</div><div class="demo-hsub">2-min prep · 4-min speaking</div></div>
+            <div class="demo-body">
+              <div class="dslabel" style="margin-bottom:.5rem">Describe: a spot — a cafe, park, or other casual place — where you often meet friends</div>
+              <div class="qlist" style="margin-bottom:.75rem"><div class="dq-p">• What the place is like</div><div class="dq-p">• Why you chose it as your go-to spot</div><div class="dq-p">• What you usually do there</div><div class="dq-p">• What makes it feel comfortable</div></div>
+              <div class="dslabel">How to structure your 4 minutes</div>
+              <div class="qlist" style="margin-bottom:.75rem"><div class="qi"><em>Minute 1: Describe the place</em></div><div class="qi"><em>Minute 2: How it became your go-to spot</em></div><div class="qi"><em>Minute 3: What a typical visit looks like</em></div><div class="qi"><em>Minute 4: What makes it feel comfortable</em></div></div>
+              <div class="dslabel">Follow-up questions</div>
+              <div class="qlist">
+            <div class="qi-wrap">
+              <div class="qi-q" onclick="toggleAns(this)"><span class="qi-q-text">Do you think casual meetups are as valuable as planned outings?</span><span class="qi-toggle">Example ▾</span></div>
+              <div class="qi-ans">I actually think more valuable, in some ways. Casual meetups feel less pressured, so conversations tend to go somewhere more genuine than a heavily planned event.</div>
+            </div>
+            <div class="qi-wrap">
+              <div class="qi-q" onclick="toggleAns(this)"><span class="qi-q-text">Has your favorite hangout spot ever changed over the years?</span><span class="qi-toggle">Example ▾</span></div>
+              <div class="qi-ans">Yes — I used to have a completely different go-to place before it closed down. It took a while to find a new one, honestly, since it's less about the place and more about it becoming familiar over time.</div>
+            </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="sc2">
+      <div class="shead"><div class="sn2 ng">32</div><div class="sbadge bg">Speaking</div><div class="stitle">Topic 1 &amp; Topic 2 · Speaking &amp; Research Discussion</div></div>
+      <div class="sbody">
+        <div class="tblock" style="margin-bottom:.85rem">
+          <div class="tlabel"><span class="tdot"></span>Topic BB · Karaoke &amp; Nightlife with Friends</div>
+          <div class="qlist">
+            <div class="qi-wrap">
+              <div class="qi-q" onclick="toggleAns(this)"><span class="qi-q-text">Do you enjoy karaoke, or does it make you nervous?</span><span class="qi-toggle">Example ▾</span></div>
+              <div class="qi-ans">A bit of both, honestly. I'm not a great singer, but after the first song the nervousness usually fades, especially in a group where everyone's equally unpolished.</div>
+            </div>
+            <div class="qi-wrap">
+              <div class="qi-q" onclick="toggleAns(this)"><span class="qi-q-text">What's your go-to karaoke song?</span><span class="qi-toggle">Example ▾</span></div>
+              <div class="qi-ans">Something upbeat and easy to sing along to rather than technically difficult. I've learned the hard way that picking a song just to sound impressive usually backfires.</div>
+            </div>
+            <div class="qi-wrap">
+              <div class="qi-q" onclick="toggleAns(this)"><span class="qi-q-text">Do you prefer a quiet bar or a livelier nightlife spot when going out with friends?</span><span class="qi-toggle">Example ▾</span></div>
+              <div class="qi-ans">Depends on the group and the mood. With close friends I'd rather have a quiet bar where we can actually talk. For a bigger celebration, something livelier fits better.</div>
+            </div>
+            <div class="qi-wrap">
+              <div class="qi-q" onclick="toggleAns(this)"><span class="qi-q-text">Do you think nightlife is an important part of socializing for young professionals?</span><span class="qi-toggle">Example ▾</span></div>
+              <div class="qi-ans">To some extent, yes — it's one of the few settings where work doesn't come up naturally. Though I think its importance gets a bit overstated; some of my best conversations happen somewhere much quieter.</div>
+            </div>
+          </div>
+          <button class="vtoggle" onclick="toggleV(this)">Vocabulary</button>
+          <div class="vlist"><div class="vc">karaoke</div><div class="vc">sing along</div><div class="vc">nightlife</div><div class="vc">go out</div><div class="vc">livelier</div><div class="vc">catch a buzz</div><div class="vc">unwind</div><div class="vc">crowd</div></div>
+        </div>
+        <div class="tblock">
+          <div class="tlabel"><span class="tdot"></span>Topic 2 · Research &amp; Discuss</div>
+          <div class="demo-wrap">
+            <div class="demo-header"><span style="font-size:18px"></span><div class="demo-htitle">Research Task: How someone you know likes to unwind with friends at night</div><div class="demo-hsub">Independent research · 4 questions for host discussion</div></div>
+            <div class="demo-body">
+              <div class="dslabel" style="margin-bottom:.5rem">Task: Ask a friend or colleague what they usually do for a fun night out — karaoke, bars, something else — or reflect on your own preferences. Come ready to share what you found.</div>
+              <button class="vtoggle" onclick="toggleV(this)">Vocabulary</button>
+              <div class="vlist"><div class="vc">night out</div><div class="vc">unwind</div><div class="vc">livelier</div><div class="vc">low-key night</div><div class="vc">hang out late</div><div class="vc">group outing</div><div class="vc">cover charge</div><div class="vc">designated driver</div><div class="vc">wind down</div><div class="vc">worth it</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="sc2">
+      <div class="shead"><div class="sn2 na">33</div><div class="sbadge ba">Presentation</div><div class="stitle">Should You Always Choose Family Over Friends?</div></div>
+      <div class="sbody">
+        <div class="pcard" style="margin-bottom:.85rem">
+          <div class="ptitle">Should You Always Choose Family Over Friends?</div>
+          <div class="pdesc">When family obligations and close friendships pull in different directions, which should come first? Take a clear position and use PREP with real or hypothetical examples.<span class="ptip">PREP structure</span><span class="ptip">Q&amp;A · Post-presentation</span></div>
+        </div>
+        <div class="tblock">
+          <div class="tlabel"><span class="tdot"></span>Q&amp;A · Post-presentation</div>
+          <div class="qlist">
+            <div class="qi" style="margin-bottom:4px">What is your overall position on prioritizing family over friends?</div>
+            <div class="qi" style="margin-bottom:4px">What is the strongest argument for always choosing family first?</div>
+            <div class="qi" style="margin-bottom:4px">What is the strongest argument for treating friendships as equally important?</div>
+            <div class="qi" style="margin-bottom:4px">Has your own view on this ever been tested by a real situation?</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="wpanel" id="w12">
+    <div class="sc2">
+      <div class="shead"><div class="sn2 ng">34</div><div class="sbadge bg">Speaking</div><div class="stitle">Topic 1 &amp; Topic 2 · Speaking practice</div></div>
+      <div class="sbody">
+        <div class="tblock" style="margin-bottom:.85rem">
+          <div class="tlabel"><span class="tdot"></span>Topic CC · Housewarming Parties</div>
+          <div class="qlist">
+            <div class="qi-wrap">
+              <div class="qi-q" onclick="toggleAns(this)"><span class="qi-q-text">Have you ever thrown or attended a housewarming party?</span><span class="qi-toggle">Example ▾</span></div>
+              <div class="qi-ans">Yes, I threw a small one when I moved into my current apartment. It wasn't anything elaborate — just a few friends, some food, and a chance to finally show off the place after months of unpacking.</div>
+            </div>
+            <div class="qi-wrap">
+              <div class="qi-q" onclick="toggleAns(this)"><span class="qi-q-text">What do you think is a good gift to bring to a housewarming party?</span><span class="qi-toggle">Example ▾</span></div>
+              <div class="qi-ans">Something practical but not too personal — plants, candles, or kitchen items tend to work well. I try to avoid anything that requires knowing someone's taste too specifically.</div>
+            </div>
+            <div class="qi-wrap">
+              <div class="qi-q" onclick="toggleAns(this)"><span class="qi-q-text">Do you think housewarming parties are still common, or is the tradition fading?</span><span class="qi-toggle">Example ▾</span></div>
+              <div class="qi-ans">I think it's becoming more casual rather than disappearing. Fewer people throw a big formal event, but the idea of having friends over shortly after moving in still feels pretty natural.</div>
+            </div>
+            <div class="qi-wrap">
+              <div class="qi-q" onclick="toggleAns(this)"><span class="qi-q-text">What's the most memorable housewarming party you've been to?</span><span class="qi-toggle">Example ▾</span></div>
+              <div class="qi-ans">A friend's rooftop apartment — the space itself was unremarkable, but the view completely changed the vibe of the evening. It made me realize how much a good setting adds to an otherwise simple gathering.</div>
+            </div>
+          </div>
+          <button class="vtoggle" onclick="toggleV(this)">Vocabulary</button>
+          <div class="vlist"><div class="vc">housewarming</div><div class="vc">host</div><div class="vc">move in</div><div class="vc">unpack</div><div class="vc">casual gathering</div><div class="vc">practical gift</div><div class="vc">vibe</div><div class="vc">setting</div></div>
+        </div>
+        <div class="tblock">
+          <div class="tlabel"><span class="tdot"></span>Topic 2 · 4-minute continuous speaking</div>
+          <div class="demo-wrap">
+            <div class="demo-header"><span style="font-size:18px"></span><div class="demo-htitle">Cue Card: Describe a time you hosted or attended a housewarming party</div><div class="demo-hsub">2-min prep · 4-min speaking</div></div>
+            <div class="demo-body">
+              <div class="dslabel" style="margin-bottom:.5rem">Describe: a housewarming party you were part of, either as host or guest</div>
+              <div class="qlist" style="margin-bottom:.75rem"><div class="dq-p">• Whose place it was and the occasion</div><div class="dq-p">• What the gathering was like</div><div class="dq-p">• A specific moment that stood out</div><div class="dq-p">• How it made you feel about the new place</div></div>
+              <div class="dslabel">How to structure your 4 minutes</div>
+              <div class="qlist" style="margin-bottom:.75rem"><div class="qi"><em>Minute 1: Whose place it was and the setup</em></div><div class="qi"><em>Minute 2: What the gathering itself was like</em></div><div class="qi"><em>Minute 3: A specific moment that stood out</em></div><div class="qi"><em>Minute 4: How it made you feel about the new place</em></div></div>
+              <div class="dslabel">Follow-up questions</div>
+              <div class="qlist">
+            <div class="qi-wrap">
+              <div class="qi-q" onclick="toggleAns(this)"><span class="qi-q-text">Do you think it's important to invite people over soon after moving somewhere new?</span><span class="qi-toggle">Example ▾</span></div>
+              <div class="qi-ans">I do, actually. It makes the space feel lived-in faster, and it gives friends an easy reason to see where you've settled rather than waiting for a random excuse.</div>
+            </div>
+            <div class="qi-wrap">
+              <div class="qi-q" onclick="toggleAns(this)"><span class="qi-q-text">Would you rather host a big housewarming party or just have one or two close friends over?</span><span class="qi-toggle">Example ▾</span></div>
+              <div class="qi-ans">One or two close friends, personally. A big party feels more like an event to manage than something to actually enjoy, especially right after the stress of moving.</div>
+            </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="sc2">
+      <div class="shead"><div class="sn2 ng">35</div><div class="sbadge bg">Speaking</div><div class="stitle">Topic 1 &amp; Topic 2 · Speaking &amp; Research Discussion</div></div>
+      <div class="sbody">
+        <div class="tblock" style="margin-bottom:.85rem">
+          <div class="tlabel"><span class="tdot"></span>Topic DD · Game Nights &amp; Board Games with Friends</div>
+          <div class="qlist">
+            <div class="qi-wrap">
+              <div class="qi-q" onclick="toggleAns(this)"><span class="qi-q-text">Do you enjoy playing board games or card games with friends?</span><span class="qi-toggle">Example ▾</span></div>
+              <div class="qi-ans">Yes, more than I expected to as an adult. It's become one of the more reliable ways to get a group of busy friends in the same room for a few hours.</div>
+            </div>
+            <div class="qi-wrap">
+              <div class="qi-q" onclick="toggleAns(this)"><span class="qi-q-text">What's your favorite game to play with a group?</span><span class="qi-toggle">Example ▾</span></div>
+              <div class="qi-ans">Something social and a little competitive, rather than purely strategic — the kind of game where trash talk and laughing matter as much as actually winning.</div>
+            </div>
+            <div class="qi-wrap">
+              <div class="qi-q" onclick="toggleAns(this)"><span class="qi-q-text">Do you think game nights are a good way to get to know new people?</span><span class="qi-toggle">Example ▾</span></div>
+              <div class="qi-ans">Definitely. A shared game gives everyone something to focus on besides small talk, so conversations end up flowing more naturally than at a typical gathering.</div>
+            </div>
+            <div class="qi-wrap">
+              <div class="qi-q" onclick="toggleAns(this)"><span class="qi-q-text">Have you ever had a game night turn unexpectedly competitive?</span><span class="qi-toggle">Example ▾</span></div>
+              <div class="qi-ans">Yes — a normally relaxed friend got surprisingly intense over a simple card game. It became a running joke afterward, but in the moment it was genuinely funny to watch.</div>
+            </div>
+          </div>
+          <button class="vtoggle" onclick="toggleV(this)">Vocabulary</button>
+          <div class="vlist"><div class="vc">board game</div><div class="vc">competitive</div><div class="vc">trash talk</div><div class="vc">strategy</div><div class="vc">take turns</div><div class="vc">host a game night</div><div class="vc">laid-back</div><div class="vc">intense</div></div>
+        </div>
+        <div class="tblock">
+          <div class="tlabel"><span class="tdot"></span>Topic 2 · Research &amp; Discuss</div>
+          <div class="demo-wrap">
+            <div class="demo-header"><span style="font-size:18px"></span><div class="demo-htitle">Research Task: How someone you know organizes a game night</div><div class="demo-hsub">Independent research · 4 questions for host discussion</div></div>
+            <div class="demo-body">
+              <div class="dslabel" style="margin-bottom:.5rem">Task: Ask a friend who regularly hosts game nights what games they usually play and how they keep things fun for everyone, or reflect on your own experience. Come ready to share what you found.</div>
+              <button class="vtoggle" onclick="toggleV(this)">Vocabulary</button>
+              <div class="vlist"><div class="vc">game night</div><div class="vc">host</div><div class="vc">snacks</div><div class="vc">house rules</div><div class="vc">teams</div><div class="vc">banter</div><div class="vc">tiebreaker</div><div class="vc">competitive streak</div><div class="vc">rematch</div><div class="vc">worth repeating</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="sc2">
+      <div class="shead"><div class="sn2 na">36</div><div class="sbadge ba">Presentation</div><div class="stitle">Is Nepotism at Work Always Wrong?</div></div>
+      <div class="sbody">
+        <div class="pcard" style="margin-bottom:.85rem">
+          <div class="ptitle">Is Nepotism at Work Always Wrong?</div>
+          <div class="pdesc">Hiring or promoting people based on personal or family connections is common but rarely discussed openly. Take a clear position on whether nepotism is always a problem, or whether it can be reasonable in some cases.<span class="ptip">PREP structure</span><span class="ptip">Q&amp;A · Post-presentation</span></div>
+        </div>
+        <div class="tblock">
+          <div class="tlabel"><span class="tdot"></span>Q&amp;A · Post-presentation</div>
+          <div class="qlist">
+            <div class="qi" style="margin-bottom:4px">What is your overall position on nepotism in hiring or promotion?</div>
+            <div class="qi" style="margin-bottom:4px">What is the strongest argument that nepotism can be reasonable?</div>
+            <div class="qi" style="margin-bottom:4px">What is the strongest argument that it's always unfair?</div>
+            <div class="qi" style="margin-bottom:4px">Have you ever witnessed nepotism at work — how did it affect the team?</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="wpanel" id="w13">
+    <div class="sc2">
+      <div class="shead"><div class="sn2 ng">37</div><div class="sbadge bg">Speaking</div><div class="stitle">Topic 1 &amp; Topic 2 · Speaking practice</div></div>
+      <div class="sbody">
+        <div class="tblock" style="margin-bottom:.85rem">
+          <div class="tlabel"><span class="tdot"></span>Topic EE · Weddings &amp; Life Events</div>
+          <div class="qlist">
+            <div class="qi-wrap">
+              <div class="qi-q" onclick="toggleAns(this)"><span class="qi-q-text">Have you been to a wedding recently? What was it like?</span><span class="qi-toggle">Example ▾</span></div>
+              <div class="qi-ans">Yes, a close friend's wedding a few months ago. What struck me most wasn't the ceremony itself but how much work clearly went into it — the amount of coordination behind a few hours of celebration is honestly underrated.</div>
+            </div>
+            <div class="qi-wrap">
+              <div class="qi-q" onclick="toggleAns(this)"><span class="qi-q-text">Do you prefer big, elaborate weddings or small, intimate ones?</span><span class="qi-toggle">Example ▾</span></div>
+              <div class="qi-ans">Small and intimate, personally. I like being able to actually talk to people rather than just seeing them across a huge room. Though I understand the appeal of a big celebration for some families.</div>
+            </div>
+            <div class="qi-wrap">
+              <div class="qi-q" onclick="toggleAns(this)"><span class="qi-q-text">What's the most memorable wedding you've ever attended?</span><span class="qi-toggle">Example ▾</span></div>
+              <div class="qi-ans">My cousin's, mainly because of a small unplanned moment — the power went out mid-ceremony and everyone just laughed and continued by phone light. It ended up being more memorable than if everything had gone perfectly.</div>
+            </div>
+            <div class="qi-wrap">
+              <div class="qi-q" onclick="toggleAns(this)"><span class="qi-q-text">Do you think wedding traditions are changing in Vietnam?</span><span class="qi-toggle">Example ▾</span></div>
+              <div class="qi-ans">I think so, gradually. More couples are mixing traditional elements with more personal, modern touches rather than following every custom exactly. It feels like a balance between honoring family expectations and making it their own.</div>
+            </div>
+          </div>
+          <button class="vtoggle" onclick="toggleV(this)">Vocabulary</button>
+          <div class="vlist"><div class="vc">ceremony</div><div class="vc">reception</div><div class="vc">guest list</div><div class="vc">vow</div><div class="vc">toast</div><div class="vc">tradition</div><div class="vc">elaborate</div><div class="vc">intimate</div></div>
+        </div>
+        <div class="tblock">
+          <div class="tlabel"><span class="tdot"></span>Topic 2 · 4-minute continuous speaking</div>
+          <div class="demo-wrap">
+            <div class="demo-header"><span style="font-size:18px"></span><div class="demo-htitle">Cue Card: Describe a wedding or life event you attended</div><div class="demo-hsub">2-min prep · 4-min speaking</div></div>
+            <div class="demo-body">
+              <div class="dslabel" style="margin-bottom:.5rem">Describe: a wedding, graduation, or similar life event you were part of</div>
+              <div class="qlist" style="margin-bottom:.75rem"><div class="dq-p">• Whose event it was and your relationship to them</div><div class="dq-p">• What the event was like</div><div class="dq-p">• A specific moment that stood out</div><div class="dq-p">• How you felt being there</div></div>
+              <div class="dslabel">How to structure your 4 minutes</div>
+              <div class="qlist" style="margin-bottom:.75rem"><div class="qi"><em>Minute 1: Whose event it was and the setting</em></div><div class="qi"><em>Minute 2: What the event itself was like</em></div><div class="qi"><em>Minute 3: A specific moment that stood out</em></div><div class="qi"><em>Minute 4: How you felt being there</em></div></div>
+              <div class="dslabel">Follow-up questions</div>
+              <div class="qlist">
+            <div class="qi-wrap">
+              <div class="qi-q" onclick="toggleAns(this)"><span class="qi-q-text">Do you think it's important to attend life events even when it's inconvenient?</span><span class="qi-toggle">Example ▾</span></div>
+              <div class="qi-ans">I do, generally. These moments don't repeat, and showing up says something that a message afterward can't quite replace, even if it costs some effort to be there.</div>
+            </div>
+            <div class="qi-wrap">
+              <div class="qi-q" onclick="toggleAns(this)"><span class="qi-q-text">Have wedding costs or expectations ever surprised you?</span><span class="qi-toggle">Example ▾</span></div>
+              <div class="qi-ans">Yes — I didn't realize how expensive being part of a wedding party could get until I was in one myself. It made me appreciate how much guests and family quietly contribute to make these events happen.</div>
+            </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="sc2">
+      <div class="shead"><div class="sn2 ng">38</div><div class="sbadge bg">Speaking</div><div class="stitle">Topic 1 &amp; Topic 2 · Speaking &amp; Research Discussion</div></div>
+      <div class="sbody">
+        <div class="tblock" style="margin-bottom:.85rem">
+          <div class="tlabel"><span class="tdot"></span>Topic FF · Group Chats &amp; Staying in the Loop</div>
+          <div class="qlist">
+            <div class="qi-wrap">
+              <div class="qi-q" onclick="toggleAns(this)"><span class="qi-q-text">How many group chats are you actively part of?</span><span class="qi-toggle">Example ▾</span></div>
+              <div class="qi-ans">Too many, honestly — probably around fifteen, though I actively check maybe five. The rest sit there mostly unread until something urgent tags me directly.</div>
+            </div>
+            <div class="qi-wrap">
+              <div class="qi-q" onclick="toggleAns(this)"><span class="qi-q-text">Do you find group chats more helpful or more overwhelming?</span><span class="qi-toggle">Example ▾</span></div>
+              <div class="qi-ans">Both, depending on the group. A small chat with close friends feels helpful and low-pressure. Larger ones, especially with constant notifications, start to feel like noise I have to manage rather than enjoy.</div>
+            </div>
+            <div class="qi-wrap">
+              <div class="qi-q" onclick="toggleAns(this)"><span class="qi-q-text">Have you ever missed something important because a group chat got too busy?</span><span class="qi-toggle">Example ▾</span></div>
+              <div class="qi-ans">Yes — an important announcement got buried under unrelated messages, and I only saw it days later. Since then I've started pinning important messages instead of trusting I'll scroll back and find them.</div>
+            </div>
+            <div class="qi-wrap">
+              <div class="qi-q" onclick="toggleAns(this)"><span class="qi-q-text">Do you think group chats have replaced phone calls for staying connected?</span><span class="qi-toggle">Example ▾</span></div>
+              <div class="qi-ans">Largely, yes, at least for casual updates. Calls now feel reserved for something more serious or urgent. It's efficient, but I do think something gets lost without hearing someone's actual tone.</div>
+            </div>
+          </div>
+          <button class="vtoggle" onclick="toggleV(this)">Vocabulary</button>
+          <div class="vlist"><div class="vc">group chat</div><div class="vc">notification</div><div class="vc">muted</div><div class="vc">pin a message</div><div class="vc">scroll back</div><div class="vc">tagged</div><div class="vc">overwhelming</div><div class="vc">catch up</div></div>
+        </div>
+        <div class="tblock">
+          <div class="tlabel"><span class="tdot"></span>Topic 2 · Research &amp; Discuss</div>
+          <div class="demo-wrap">
+            <div class="demo-header"><span style="font-size:18px"></span><div class="demo-htitle">Research Task: How someone you know manages a busy group chat</div><div class="demo-hsub">Independent research · 4 questions for host discussion</div></div>
+            <div class="demo-body">
+              <div class="dslabel" style="margin-bottom:.5rem">Task: Ask a friend or colleague who's in a lot of group chats how they keep up without feeling overwhelmed, or reflect on your own habits. Come ready to share what you found.</div>
+              <button class="vtoggle" onclick="toggleV(this)">Vocabulary</button>
+              <div class="vlist"><div class="vc">mute</div><div class="vc">pin</div><div class="vc">archive</div><div class="vc">unread messages</div><div class="vc">notification settings</div><div class="vc">scroll through</div><div class="vc">keep up</div><div class="vc">tagged</div><div class="vc">priority</div><div class="vc">digital clutter</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="sc2">
+      <div class="shead"><div class="sn2 na">39</div><div class="sbadge ba">Presentation</div><div class="stitle">Should Phones Be Banned at Concerts &amp; Social Gatherings?</div></div>
+      <div class="sbody">
+        <div class="pcard" style="margin-bottom:.85rem">
+          <div class="ptitle">Should Phones Be Banned at Concerts &amp; Social Gatherings?</div>
+          <div class="pdesc">Recording every moment through a screen versus being fully present — take a clear position on whether phones should be limited or banned at concerts, dinners, and other gatherings meant for genuine connection.<span class="ptip">PREP structure</span><span class="ptip">Q&amp;A · Post-presentation</span></div>
+        </div>
+        <div class="tblock">
+          <div class="tlabel"><span class="tdot"></span>Q&amp;A · Post-presentation</div>
+          <div class="qlist">
+            <div class="qi" style="margin-bottom:4px">What is your overall position on phone use at concerts and gatherings?</div>
+            <div class="qi" style="margin-bottom:4px">What is the strongest argument for limiting or banning phones?</div>
+            <div class="qi" style="margin-bottom:4px">What is the strongest argument against banning them?</div>
+            <div class="qi" style="margin-bottom:4px">Would you personally follow a "phones away" rule if a friend proposed it?</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="wpanel" id="w14">
+    <div class="sc2">
+      <div class="shead"><div class="sn2 ng">40</div><div class="sbadge bg">Speaking</div><div class="stitle">Topic 1 &amp; Topic 2 · Speaking practice</div></div>
+      <div class="sbody">
+        <div class="tblock" style="margin-bottom:.85rem">
+          <div class="tlabel"><span class="tdot"></span>Topic GG · Neighbors &amp; Community Life</div>
+          <div class="qlist">
+            <div class="qi-wrap">
+              <div class="qi-q" onclick="toggleAns(this)"><span class="qi-q-text">Do you know your neighbors well, or is it mostly a wave in the hallway?</span><span class="qi-toggle">Example ▾</span></div>
+              <div class="qi-ans">Mostly a wave, if I'm honest. I know a couple of them by name and we'll chat briefly in the elevator, but I couldn't say we're actually close. City living makes that kind of distance pretty normal.</div>
+            </div>
+            <div class="qi-wrap">
+              <div class="qi-q" onclick="toggleAns(this)"><span class="qi-q-text">Have you ever asked a neighbor for a favor, or had one ask you?</span><span class="qi-toggle">Example ▾</span></div>
+              <div class="qi-ans">Yes — I once asked a neighbor to accept a package for me while I was traveling, and I've returned the favor a few times since. It's a small thing, but it's built a bit of familiarity between us.</div>
+            </div>
+            <div class="qi-wrap">
+              <div class="qi-q" onclick="toggleAns(this)"><span class="qi-q-text">Do you think community life in cities has weakened compared to the past?</span><span class="qi-toggle">Example ▾</span></div>
+              <div class="qi-ans">I think so, yes. People used to know their whole street; now buildings are full of strangers who happen to share a wall. It's not that people are less friendly, there's just less occasion to actually interact.</div>
+            </div>
+            <div class="qi-wrap">
+              <div class="qi-q" onclick="toggleAns(this)"><span class="qi-q-text">What would make you feel more connected to the people around where you live?</span><span class="qi-toggle">Example ▾</span></div>
+              <div class="qi-ans">Some kind of shared, recurring event — even something small like a building gathering once a year. Without a reason to interact, familiarity just never builds naturally on its own.</div>
+            </div>
+          </div>
+          <button class="vtoggle" onclick="toggleV(this)">Vocabulary</button>
+          <div class="vlist"><div class="vc">neighbor</div><div class="vc">apartment building</div><div class="vc">noise</div><div class="vc">community</div><div class="vc">borrow</div><div class="vc">favor</div><div class="vc">familiar face</div><div class="vc">block party</div></div>
+        </div>
+        <div class="tblock">
+          <div class="tlabel"><span class="tdot"></span>Topic 2 · 4-minute continuous speaking</div>
+          <div class="demo-wrap">
+            <div class="demo-header"><span style="font-size:18px"></span><div class="demo-htitle">Cue Card: Describe the place where you live and its community</div><div class="demo-hsub">2-min prep · 4-min speaking</div></div>
+            <div class="demo-body">
+              <div class="dslabel" style="margin-bottom:.5rem">Describe: the neighborhood or building where you live and what the community is like</div>
+              <div class="qlist" style="margin-bottom:.75rem"><div class="dq-p">• What kind of place you live in</div><div class="dq-p">• What you know about your neighbors</div><div class="dq-p">• A specific interaction you remember having with someone nearby</div><div class="dq-p">• Whether you'd want more or less connection with people around you</div></div>
+              <div class="dslabel">How to structure your 4 minutes</div>
+              <div class="qlist" style="margin-bottom:.75rem"><div class="qi"><em>Minute 1: Describe where you live</em></div><div class="qi"><em>Minute 2: What you know about your neighbors</em></div><div class="qi"><em>Minute 3: A specific memory or interaction</em></div><div class="qi"><em>Minute 4: What you'd want more or less of</em></div></div>
+              <div class="dslabel">Follow-up questions</div>
+              <div class="qlist">
+            <div class="qi-wrap">
+              <div class="qi-q" onclick="toggleAns(this)"><span class="qi-q-text">Do you think growing up somewhere rural gives people a stronger sense of community?</span><span class="qi-toggle">Example ▾</span></div>
+              <div class="qi-ans">Often, yes. In smaller towns, everyone tends to know everyone, partly because there's simply nowhere to hide and fewer people to meet. Cities trade that closeness for anonymity and convenience.</div>
+            </div>
+            <div class="qi-wrap">
+              <div class="qi-q" onclick="toggleAns(this)"><span class="qi-q-text">Would you want to be closer to your neighbors, or do you prefer privacy?</span><span class="qi-toggle">Example ▾</span></div>
+              <div class="qi-ans">A bit of both, honestly. I like knowing a few friendly faces nearby for safety and small favors, but I wouldn't want the kind of closeness where everyone knows everyone's business.</div>
+            </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="sc2">
+      <div class="shead"><div class="sn2 ng">41</div><div class="sbadge bg">Speaking</div><div class="stitle">Topic 1 &amp; Topic 2 · Speaking &amp; Research Discussion</div></div>
+      <div class="sbody">
+        <div class="tblock" style="margin-bottom:.85rem">
+          <div class="tlabel"><span class="tdot"></span>Topic HH · Pets &amp; Home Life</div>
+          <div class="qlist">
+            <div class="qi-wrap">
+              <div class="qi-q" onclick="toggleAns(this)"><span class="qi-q-text">Do you have a pet, or have you ever thought about getting one?</span><span class="qi-toggle">Example ▾</span></div>
+              <div class="qi-ans">I have a cat, and honestly I underestimated how much responsibility it would be. Feeding, vet visits, just making sure someone's around — it's a real commitment, not just something nice to have around the apartment.</div>
+            </div>
+            <div class="qi-wrap">
+              <div class="qi-q" onclick="toggleAns(this)"><span class="qi-q-text">How has having a pet changed your daily routine?</span><span class="qi-toggle">Example ▾</span></div>
+              <div class="qi-ans">More than I expected. I have to think about who's watching her before I travel, and honestly, having a consistent reason to be home at a certain time has made my own routine more structured too.</div>
+            </div>
+            <div class="qi-wrap">
+              <div class="qi-q" onclick="toggleAns(this)"><span class="qi-q-text">Do you think pets genuinely help people manage stress?</span><span class="qi-toggle">Example ▾</span></div>
+              <div class="qi-ans">I do, from personal experience. Coming home to a cat that's happy to see me, regardless of how the day went, is oddly grounding. It doesn't fix the stress, but it gives my mind a break from it.</div>
+            </div>
+            <div class="qi-wrap">
+              <div class="qi-q" onclick="toggleAns(this)"><span class="qi-q-text">Have you ever had to adjust your living situation because of a pet?</span><span class="qi-toggle">Example ▾</span></div>
+              <div class="qi-ans">Yes — I specifically looked for a pet-friendly apartment when I moved, which narrowed my options a lot. It felt limiting at the time, but I never once considered giving her up as an alternative.</div>
+            </div>
+          </div>
+          <button class="vtoggle" onclick="toggleV(this)">Vocabulary</button>
+          <div class="vlist"><div class="vc">adopt</div><div class="vc">routine</div><div class="vc">companionship</div><div class="vc">responsibility</div><div class="vc">vet</div><div class="vc">walk</div><div class="vc">feed</div><div class="vc">attachment</div></div>
+        </div>
+        <div class="tblock">
+          <div class="tlabel"><span class="tdot"></span>Topic 2 · Research &amp; Discuss</div>
+          <div class="demo-wrap">
+            <div class="demo-header"><span style="font-size:18px"></span><div class="demo-htitle">Research Task: A pet-friendly place or pet care service in your city</div><div class="demo-hsub">Independent research · 4 questions for host discussion</div></div>
+            <div class="demo-body">
+              <div class="dslabel" style="margin-bottom:.5rem">Task: Look up a pet-friendly cafe, park, or pet care service (grooming, boarding, a vet clinic) near where you live. Come ready to explain what you found and whether you'd actually use it.</div>
+              <button class="vtoggle" onclick="toggleV(this)">Vocabulary</button>
+              <div class="vlist"><div class="vc">pet-friendly</div><div class="vc">grooming</div><div class="vc">boarding</div><div class="vc">vet clinic</div><div class="vc">leash</div><div class="vc">check-in</div><div class="vc">reviews</div><div class="vc">appointment</div><div class="vc">convenient</div><div class="vc">worth trying</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="sc2">
+      <div class="shead"><div class="sn2 na">42</div><div class="sbadge ba">Presentation</div><div class="stitle">Is It Ethical to Lay Off Employees While Reporting Record Profits?</div></div>
+      <div class="sbody">
+        <div class="pcard" style="margin-bottom:.85rem">
+          <div class="ptitle">Is It Ethical to Lay Off Employees While Reporting Record Profits?</div>
+          <div class="pdesc">Layoffs sometimes happen at companies that are simultaneously posting record profits, often to satisfy investors. Take a clear position on whether this practice is ethical.<span class="ptip">PREP structure</span><span class="ptip">Q&amp;A · Post-presentation</span></div>
+        </div>
+        <div class="tblock">
+          <div class="tlabel"><span class="tdot"></span>Q&amp;A · Post-presentation</div>
+          <div class="qlist">
+            <div class="qi" style="margin-bottom:4px">What is your overall position on layoffs during record-profit periods?</div>
+            <div class="qi" style="margin-bottom:4px">What is the strongest argument defending this practice from a business standpoint?</div>
+            <div class="qi" style="margin-bottom:4px">What is the strongest argument that it's unethical?</div>
+            <div class="qi" style="margin-bottom:4px">Do you think companies owe employees more transparency about the real reasons behind layoffs?</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="wpanel" id="w15">
+    <div class="sc2">
+      <div class="shead"><div class="sn2 ng">43</div><div class="sbadge bg">Speaking</div><div class="stitle">Topic QQ · Speaking practice</div></div>
+      <div class="sbody">
+        <div class="tblock">
+          <div class="tlabel"><span class="tdot"></span>Topic QQ · Gift-Giving Culture</div>
+          <div class="qlist">
+            <div class="qi-wrap"><div class="qi-q" onclick="toggleAns(this)"><span class="qi-q-text">How do you usually decide what gift to give someone?</span><span class="qi-toggle">Example ▾</span></div><div class="qi-ans">I try to think of something tied to a specific conversation we've had, rather than a generic default. A gift that shows <span class="hl">I actually remembered something they mentioned</span> tends to mean more than something expensive but impersonal.</div></div>
+            <div class="qi-wrap"><div class="qi-q" onclick="toggleAns(this)"><span class="qi-q-text">Do you think gift-giving in Vietnam has different unwritten rules compared to other places?</span><span class="qi-toggle">Example ▾</span></div><div class="qi-ans">I think so — there's more emphasis on <span class="hl">the gesture and presentation itself</span>, especially around holidays or visiting someone's home. Showing up empty-handed can feel more awkward here than in some other cultures.</div></div>
+            <div class="qi-wrap"><div class="qi-q" onclick="toggleAns(this)"><span class="qi-q-text">Have you ever received a gift that really surprised you?</span><span class="qi-toggle">Example ▾</span></div><div class="qi-ans">Yes — a colleague once gave me something related to a hobby I'd only mentioned once, months earlier. It surprised me because it meant they'd <span class="hl">actually been paying attention</span>, not just picking something safe.</div></div>
+            <div class="qi-wrap"><div class="qi-q" onclick="toggleAns(this)"><span class="qi-q-text">Do you prefer giving experiences or physical gifts?</span><span class="qi-toggle">Example ▾</span></div><div class="qi-ans">Experiences, generally. <span class="hl">Physical things get used up or forgotten</span>, but a shared experience tends to become an actual memory. Though for family, especially older relatives, I still lean toward something practical.</div></div>
+            <div class="qi-wrap"><div class="qi-q" onclick="toggleAns(this)"><span class="qi-q-text">How do you handle it when you receive a gift you don't really like?</span><span class="qi-toggle">Example ▾</span></div><div class="qi-ans">I focus on <span class="hl">the intention rather than the item itself</span>. Even if it's not something I'd choose, someone took the time to think of me, and that's worth appreciating regardless of the actual gift.</div></div>
+            <div class="qi-wrap"><div class="qi-q" onclick="toggleAns(this)"><span class="qi-q-text">Do you think gift-giving can create pressure or obligation between people?</span><span class="qi-toggle">Example ▾</span></div><div class="qi-ans">It definitely can. There's sometimes an unspoken expectation to <span class="hl">reciprocate at a similar value</span>, which can turn something meant to be generous into something transactional if you're not careful.</div></div>
+          </div>
+          <button class="vtoggle" onclick="toggleV(this)">Vocabulary</button>
+          <div class="vlist"><div class="vc">gesture</div><div class="vc">thoughtful</div><div class="vc">reciprocate</div><div class="vc">obligation</div><div class="vc">presentation</div><div class="vc">sentimental</div><div class="vc">practical</div><div class="vc">generous</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="sc2">
+      <div class="shead"><div class="sn2 ng">44</div><div class="sbadge bg">Speaking</div><div class="stitle">Topic RR · Research &amp; Discuss</div></div>
+      <div class="sbody">
+        <div class="tblock">
+          <div class="tlabel"><span class="tdot"></span>Topic RR · Research &amp; Discuss</div>
+          <div class="demo-wrap">
+            <div class="demo-header"><span style="font-size:18px"></span><div class="demo-htitle">Research Task: How someone you know picks a thoughtful gift</div><div class="demo-hsub">Independent research · 4 questions for host discussion</div></div>
+            <div class="demo-body">
+              <div class="dslabel" style="margin-bottom:.5rem">Task: Ask a friend or family member how they choose gifts for people close to them, or reflect on a memorable gift you once gave. Come ready to share what you found.</div>
+              <button class="vtoggle" onclick="toggleV(this)">Vocabulary</button>
+              <div class="vlist"><div class="vc">thoughtful</div><div class="vc">budget</div><div class="vc">last-minute</div><div class="vc">wrap</div><div class="vc">surprise</div><div class="vc">occasion</div><div class="vc">personalize</div><div class="vc">price tag</div><div class="vc">sentimental value</div><div class="vc">worth it</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="sc2">
+      <div class="shead"><div class="sn2 na">45</div><div class="sbadge ba">Presentation</div><div class="stitle">Is Job Hopping Good for Your Career?</div></div>
+      <div class="sbody">
+        <div class="pcard" style="margin-bottom:.85rem">
+          <div class="ptitle">Is Job Hopping Good for Your Career?</div>
+          <div class="pdesc">Present a clear position on whether moving jobs frequently helps or hurts a career today, compared with staying at one company long-term. Use PREP and real or hypothetical examples.<span class="ptip">PREP structure</span><span class="ptip">Q&amp;A · Post-presentation</span></div>
+        </div>
+        <div class="tblock">
+          <div class="tlabel"><span class="tdot"></span>Q&amp;A · Post-presentation</div>
+          <div class="qlist">
+            <div class="qi" style="margin-bottom:4px">What is your overall view on job hopping?</div>
+            <div class="qi" style="margin-bottom:4px">What is the strongest argument in favor of staying at one company?</div>
+            <div class="qi" style="margin-bottom:4px">What is the strongest argument in favor of moving around?</div>
+            <div class="qi" style="margin-bottom:4px">Has your own view on this changed as your career has progressed?</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="wpanel" id="w16">
+    <div class="sc2">
+      <div class="shead"><div class="sn2 ng">46</div><div class="sbadge bg">Speaking</div><div class="stitle">Topic II · Speaking practice</div></div>
+      <div class="sbody">
+        <div class="tblock">
+          <div class="tlabel"><span class="tdot"></span>Topic II · Onboarding &amp; First Impressions at a New Job</div>
+          <div class="qlist">
+            <div class="qi-wrap"><div class="qi-q" onclick="toggleAns(this)"><span class="qi-q-text">What's the hardest part about starting a new job?</span><span class="qi-toggle">Example ▾</span></div><div class="qi-ans">Honestly, not knowing the <span class="hl">unwritten rules</span> — who to ask for what, how decisions actually get made versus how they're supposed to get made. The org chart tells you very little about how things really work.</div></div>
+            <div class="qi-wrap"><div class="qi-q" onclick="toggleAns(this)"><span class="qi-q-text">How long do you think it usually takes someone to fully ramp up in a new role?</span><span class="qi-toggle">Example ▾</span></div><div class="qi-ans">Realistically, <span class="hl">about three months to be productive</span> and six to feel genuinely comfortable. Anyone who claims to be fully up to speed in two weeks is probably underestimating what they don't know yet.</div></div>
+            <div class="qi-wrap"><div class="qi-q" onclick="toggleAns(this)"><span class="qi-q-text">What's the best onboarding experience you've had?</span><span class="qi-toggle">Example ▾</span></div><div class="qi-ans">A previous company paired me with <span class="hl">a mentor for my first month</span> who wasn't my manager, so I could ask 'dumb' questions without worrying about how it reflected on my performance review. That safety net made a huge difference.</div></div>
+            <div class="qi-wrap"><div class="qi-q" onclick="toggleAns(this)"><span class="qi-q-text">What do you wish someone had told you on your first day at your current job?</span><span class="qi-toggle">Example ▾</span></div><div class="qi-ans">That it's okay to <span class="hl">say 'I don't know yet' more than I did.</span> I spent the first few weeks nodding along in meetings instead of admitting confusion, which just delayed me actually understanding things.</div></div>
+            <div class="qi-wrap"><div class="qi-q" onclick="toggleAns(this)"><span class="qi-q-text">How do you help a new team member settle in?</span><span class="qi-toggle">Example ▾</span></div><div class="qi-ans">I try to <span class="hl">over-communicate context in the first few weeks</span> — not just what to do, but why we do it that way. I also make a point of checking in without waiting for them to ask, since new hires often hesitate to interrupt.</div></div>
+            <div class="qi-wrap"><div class="qi-q" onclick="toggleAns(this)"><span class="qi-q-text">Do you think first impressions at work matter as much as people say?</span><span class="qi-toggle">Example ▾</span></div><div class="qi-ans">They matter, but they're more correctable than people fear. What matters more is <span class="hl">the trend</span> — whether you're visibly improving week over week. A shaky first two weeks is quickly forgotten if the trajectory afterward is strong.</div></div>
+          </div>
+          <button class="vtoggle" onclick="toggleV(this)">Vocabulary</button>
+          <div class="vlist"><div class="vc">ramp up</div><div class="vc">orientation</div><div class="vc">mentor</div><div class="vc">probation</div><div class="vc">culture fit</div><div class="vc">shadow</div><div class="vc">checklist</div><div class="vc">settle in</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="sc2">
+      <div class="shead"><div class="sn2 ng">47</div><div class="sbadge bg">Speaking</div><div class="stitle">Topic JJ · Research &amp; Discuss</div></div>
+      <div class="sbody">
+        <div class="tblock">
+          <div class="tlabel"><span class="tdot"></span>Topic JJ · Research &amp; Discuss</div>
+          <div class="demo-wrap">
+            <div class="demo-header"><span style="font-size:18px"></span><div class="demo-htitle">Research Task: How a well-known company designs onboarding</div><div class="demo-hsub">Independent research · 4 questions for host discussion</div></div>
+            <div class="demo-body">
+              <div class="dslabel" style="margin-bottom:.5rem">Task: Ask a friend who works somewhere you find interesting — or reflect on your own first week at a job — how onboarding actually went. Come ready to share what you found and compare it to your own experience joining a company.</div>
+              <button class="vtoggle" onclick="toggleV(this)">Vocabulary</button>
+              <div class="vlist"><div class="vc">first week</div><div class="vc">buddy system</div><div class="vc">introduced to</div><div class="vc">shadow</div><div class="vc">paperwork</div><div class="vc">settle in</div><div class="vc">overwhelmed</div><div class="vc">first impression</div><div class="vc">helpful</div><div class="vc">disorganized</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="sc2">
+      <div class="shead"><div class="sn2 na">48</div><div class="sbadge ba">Presentation</div><div class="stitle">Should Companies Offer Unlimited PTO?</div></div>
+      <div class="sbody">
+        <div class="pcard" style="margin-bottom:.85rem">
+          <div class="ptitle">Should Companies Offer Unlimited PTO?</div>
+          <div class="pdesc">Take a clear position on whether unlimited paid time off policies genuinely benefit employees or mostly benefit companies. Use PREP and real or hypothetical examples.<span class="ptip">PREP structure</span><span class="ptip">Q&amp;A · Post-presentation</span></div>
+        </div>
+        <div class="tblock">
+          <div class="tlabel"><span class="tdot"></span>Q&amp;A · Post-presentation</div>
+          <div class="qlist">
+            <div class="qi" style="margin-bottom:4px">What is your overall position on unlimited PTO policies?</div>
+            <div class="qi" style="margin-bottom:4px">What is the strongest argument in favor of unlimited PTO?</div>
+            <div class="qi" style="margin-bottom:4px">What is the strongest argument against it?</div>
+            <div class="qi" style="margin-bottom:4px">Would your opinion change depending on the company culture?</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="wpanel" id="w17">
+    <div class="sc2">
+      <div class="shead"><div class="sn2 ng">49</div><div class="sbadge bg">Speaking</div><div class="stitle">Topic KK · Speaking practice</div></div>
+      <div class="sbody">
+        <div class="tblock">
+          <div class="tlabel"><span class="tdot"></span>Topic KK · Public Recognition &amp; Rewards at Work</div>
+          <div class="qlist">
+            <div class="qi-wrap"><div class="qi-q" onclick="toggleAns(this)"><span class="qi-q-text">Do you think public recognition motivates people, or does it make some uncomfortable?</span><span class="qi-toggle">Example ▾</span></div><div class="qi-ans">It genuinely <span class="hl">depends on the person.</span> Some people are energized by being called out in front of the team, while others find it awkward and would rather receive the same praise privately. I try to ask people how they prefer it.</div></div>
+            <div class="qi-wrap"><div class="qi-q" onclick="toggleAns(this)"><span class="qi-q-text">What's a form of recognition that actually meant something to you?</span><span class="qi-toggle">Example ▾</span></div><div class="qi-ans">A manager once mentioned a specific thing I'd done <span class="hl">in a company-wide meeting</span>, without me knowing beforehand. It felt genuine precisely because it wasn't generic — she named the exact impact, not just 'great job.'</div></div>
+            <div class="qi-wrap"><div class="qi-q" onclick="toggleAns(this)"><span class="qi-q-text">Do you think financial rewards or public recognition matter more?</span><span class="qi-toggle">Example ▾</span></div><div class="qi-ans">For sustained motivation, <span class="hl">recognition matters more than people expect.</span> Money fixes dissatisfaction up to a point, but feeling seen for specific work is what keeps people engaged day to day. The two aren't interchangeable.</div></div>
+            <div class="qi-wrap"><div class="qi-q" onclick="toggleAns(this)"><span class="qi-q-text">Have you ever felt overlooked when credit was being given?</span><span class="qi-toggle">Example ▾</span></div><div class="qi-ans">Yes, on a project where a more visible teammate got credit for work that was genuinely a team effort. Instead of resenting it quietly, I <span class="hl">raised it directly with my manager</span> afterward — which felt uncomfortable but was the right call.</div></div>
+            <div class="qi-wrap"><div class="qi-q" onclick="toggleAns(this)"><span class="qi-q-text">Do you think recognition programs at companies are usually genuine or performative?</span><span class="qi-toggle">Example ▾</span></div><div class="qi-ans">A mix, honestly. Formal 'employee of the month' style programs often feel <span class="hl">performative because they're generic and scheduled.</span> Spontaneous, specific recognition from a peer or manager tends to feel far more genuine.</div></div>
+            <div class="qi-wrap"><div class="qi-q" onclick="toggleAns(this)"><span class="qi-q-text">How do you like to be recognized for good work?</span><span class="qi-toggle">Example ▾</span></div><div class="qi-ans"><span class="hl">Privately and specifically</span>, most of the time. A short message explaining exactly what I did well means more to me than a generic public shout-out. Though I'll admit, occasional public recognition still feels nice.</div></div>
+          </div>
+          <button class="vtoggle" onclick="toggleV(this)">Vocabulary</button>
+          <div class="vlist"><div class="vc">recognition</div><div class="vc">morale booster</div><div class="vc">incentive</div><div class="vc">spotlight</div><div class="vc">token gesture</div><div class="vc">meritocracy</div><div class="vc">shout-out</div><div class="vc">tenure</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="sc2">
+      <div class="shead"><div class="sn2 ng">50</div><div class="sbadge bg">Speaking</div><div class="stitle">Topic LL · Research &amp; Discuss</div></div>
+      <div class="sbody">
+        <div class="tblock">
+          <div class="tlabel"><span class="tdot"></span>Topic LL · Research &amp; Discuss</div>
+          <div class="demo-wrap">
+            <div class="demo-header"><span style="font-size:18px"></span><div class="demo-htitle">Research Task: How a company or culture approaches recognition</div><div class="demo-hsub">Independent research · 4 questions for host discussion</div></div>
+            <div class="demo-body">
+              <div class="dslabel" style="margin-bottom:.5rem">Task: Ask someone you know how their company rewards or recognizes good work — a bonus, a shout-out, an award — or reflect on how it works at your own company. Come ready to share what you found and your opinion of it.</div>
+              <button class="vtoggle" onclick="toggleV(this)">Vocabulary</button>
+              <div class="vlist"><div class="vc">bonus</div><div class="vc">shout-out</div><div class="vc">employee of the month</div><div class="vc">appreciate</div><div class="vc">deserve</div><div class="vc">motivating</div><div class="vc">overlooked</div><div class="vc">reward</div><div class="vc">public praise</div><div class="vc">genuine</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="sc2">
+      <div class="shead"><div class="sn2 na">51</div><div class="sbadge ba">Presentation</div><div class="stitle">Should Salaries Be Transparent?</div></div>
+      <div class="sbody">
+        <div class="pcard" style="margin-bottom:.85rem">
+          <div class="ptitle">Should Salaries Be Transparent?</div>
+          <div class="pdesc">Present a clear position on whether companies should openly share salary ranges and individual pay. Use PREP, and consider both the employee and company perspective.<span class="ptip">PREP structure</span><span class="ptip">Q&amp;A · Post-presentation</span></div>
+        </div>
+        <div class="tblock">
+          <div class="tlabel"><span class="tdot"></span>Q&amp;A · Post-presentation</div>
+          <div class="qlist">
+            <div class="qi" style="margin-bottom:4px">What is your overall position on salary transparency?</div>
+            <div class="qi" style="margin-bottom:4px">What is the strongest argument in favor of transparency?</div>
+            <div class="qi" style="margin-bottom:4px">What is the strongest argument against it?</div>
+            <div class="qi" style="margin-bottom:4px">Do you think your own opinion would change if your company adopted this today?</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="wpanel" id="w18">
+    <div class="sc2">
+      <div class="shead"><div class="sn2 ng">52</div><div class="sbadge bg">Speaking</div><div class="stitle">Topic MM · Speaking practice</div></div>
+      <div class="sbody">
+        <div class="tblock">
+          <div class="tlabel"><span class="tdot"></span>Topic MM · Cross-functional Collaboration</div>
+          <div class="qlist">
+            <div class="qi-wrap"><div class="qi-q" onclick="toggleAns(this)"><span class="qi-q-text">What's the biggest challenge when working with teams outside your own department?</span><span class="qi-toggle">Example ▾</span></div><div class="qi-ans">Usually it's <span class="hl">differing priorities</span> — what's urgent for my team might be low priority for theirs. I've learned to explain the 'why' behind a request clearly, since people are far more willing to reprioritize when they understand the impact.</div></div>
+            <div class="qi-wrap"><div class="qi-q" onclick="toggleAns(this)"><span class="qi-q-text">How do you build trust with a team you don't work with regularly?</span><span class="qi-toggle">Example ▾</span></div><div class="qi-ans">I try to <span class="hl">deliver on small things reliably</span> before asking for anything big. Trust across teams is built through a track record, not a single conversation, so I focus on being consistent early rather than persuasive early.</div></div>
+            <div class="qi-wrap"><div class="qi-q" onclick="toggleAns(this)"><span class="qi-q-text">Have you ever experienced a project fail because of poor cross-team communication?</span><span class="qi-toggle">Example ▾</span></div><div class="qi-ans">Yes — two teams both assumed the other owned a critical handoff, and it fell through the cracks for weeks. After that we started <span class="hl">explicitly naming an owner for every dependency</span> in project kickoffs, which sounds obvious but wasn't happening before.</div></div>
+            <div class="qi-wrap"><div class="qi-q" onclick="toggleAns(this)"><span class="qi-q-text">Do you think 'silos' are always a bad thing?</span><span class="qi-toggle">Example ▾</span></div><div class="qi-ans">Not entirely. Some specialization is necessary for teams to move fast on their own work. The problem isn't the silo itself, it's when there's <span class="hl">no reliable bridge between silos</span> when something actually needs to cross over.</div></div>
+            <div class="qi-wrap"><div class="qi-q" onclick="toggleAns(this)"><span class="qi-q-text">How do you get buy-in from a team that doesn't report to you?</span><span class="qi-toggle">Example ▾</span></div><div class="qi-ans">I focus on <span class="hl">what's in it for them</span>, not just what I need. If I can show how something also solves a problem on their side, buy-in tends to follow naturally rather than needing to be pushed.</div></div>
+            <div class="qi-wrap"><div class="qi-q" onclick="toggleAns(this)"><span class="qi-q-text">What's one habit that makes cross-functional projects run more smoothly?</span><span class="qi-toggle">Example ▾</span></div><div class="qi-ans">A <span class="hl">single shared status document</span> that both teams update, instead of parallel tracking in separate tools. It sounds small, but it removes a huge amount of 'wait, I thought you were handling that' confusion.</div></div>
+          </div>
+          <button class="vtoggle" onclick="toggleV(this)">Vocabulary</button>
+          <div class="vlist"><div class="vc">silo</div><div class="vc">stakeholder</div><div class="vc">handoff</div><div class="vc">cross-functional</div><div class="vc">buy-in</div><div class="vc">dependency</div><div class="vc">bottleneck</div><div class="vc">sync</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="sc2">
+      <div class="shead"><div class="sn2 ng">53</div><div class="sbadge bg">Speaking</div><div class="stitle">Topic NN · Research &amp; Discuss</div></div>
+      <div class="sbody">
+        <div class="tblock">
+          <div class="tlabel"><span class="tdot"></span>Topic NN · Research &amp; Discuss</div>
+          <div class="demo-wrap">
+            <div class="demo-header"><span style="font-size:18px"></span><div class="demo-htitle">Research Task: A cross-functional collaboration model</div><div class="demo-hsub">Independent research · 4 questions for host discussion</div></div>
+            <div class="demo-body">
+              <div class="dslabel" style="margin-bottom:.5rem">Task: Think of two departments at a company you know well (e.g. marketing and engineering, sales and support) and ask someone — or reflect yourself — on how they actually work together day to day. Come ready to explain what you found.</div>
+              <button class="vtoggle" onclick="toggleV(this)">Vocabulary</button>
+              <div class="vlist"><div class="vc">shared project</div><div class="vc">miscommunication</div><div class="vc">different priorities</div><div class="vc">check-in meeting</div><div class="vc">handoff</div><div class="vc">teamwork</div><div class="vc">friction</div><div class="vc">smooth</div><div class="vc">delay</div><div class="vc">on the same page</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="sc2">
+      <div class="shead"><div class="sn2 na">54</div><div class="sbadge ba">Presentation</div><div class="stitle">The Ethics of Workplace Surveillance</div></div>
+      <div class="sbody">
+        <div class="pcard" style="margin-bottom:.85rem">
+          <div class="ptitle">The Ethics of Workplace Surveillance</div>
+          <div class="pdesc">Present a clear, nuanced view on monitoring employees at work — screen tracking, keystroke logging, location tracking. Go beyond simple approval or outrage.<span class="ptip">PREP structure</span><span class="ptip">Q&amp;A · Post-presentation</span></div>
+        </div>
+        <div class="tblock">
+          <div class="tlabel"><span class="tdot"></span>Q&amp;A · Post-presentation</div>
+          <div class="qlist">
+            <div class="qi" style="margin-bottom:4px">What is your overall view on workplace surveillance tools?</div>
+            <div class="qi" style="margin-bottom:4px">What is the strongest argument in favor of monitoring?</div>
+            <div class="qi" style="margin-bottom:4px">What is the strongest argument against it?</div>
+            <div class="qi" style="margin-bottom:4px">Where would you personally draw the line?</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="wpanel" id="w19">
+    <div class="sc2">
+      <div class="shead"><div class="sn2 ng">55</div><div class="sbadge bg">Speaking</div><div class="stitle">Topic OO · Speaking practice</div></div>
+      <div class="sbody">
+        <div class="tblock">
+          <div class="tlabel"><span class="tdot"></span>Topic OO · Negotiating Salary &amp; Promotions</div>
+          <div class="qlist">
+            <div class="qi-wrap"><div class="qi-q" onclick="toggleAns(this)"><span class="qi-q-text">Do you find it comfortable or uncomfortable to negotiate your own salary?</span><span class="qi-toggle">Example ▾</span></div><div class="qi-ans"><span class="hl">Uncomfortable, if I'm honest</span>, even though I know intellectually it's just a normal business conversation. What helps is treating it less like asking for a favor and more like presenting evidence for a fair number.</div></div>
+            <div class="qi-wrap"><div class="qi-q" onclick="toggleAns(this)"><span class="qi-q-text">What's the biggest mistake people make when negotiating a raise?</span><span class="qi-toggle">Example ▾</span></div><div class="qi-ans">Not having <span class="hl">market data to back up the number</span> they're asking for. Without a clear benchmark, the conversation becomes about feelings and gut instinct instead of an objective case, which is much easier for a manager to push back on.</div></div>
+            <div class="qi-wrap"><div class="qi-q" onclick="toggleAns(this)"><span class="qi-q-text">Have you ever successfully negotiated a better offer? What did you do?</span><span class="qi-toggle">Example ▾</span></div><div class="qi-ans">Yes — I had a competing offer and was <span class="hl">upfront about it rather than bluffing.</span> I shared the number honestly and asked if they could match it. Being direct rather than playing games made the conversation faster and less awkward.</div></div>
+            <div class="qi-wrap"><div class="qi-q" onclick="toggleAns(this)"><span class="qi-q-text">Do you think it's ever appropriate to negotiate a promotion, not just salary?</span><span class="qi-toggle">Example ▾</span></div><div class="qi-ans">Absolutely, and I think people do it far less than they should. If your responsibilities have already grown, it's reasonable to ask that <span class="hl">your title and pay reflect that</span>, rather than waiting for it to be offered.</div></div>
+            <div class="qi-wrap"><div class="qi-q" onclick="toggleAns(this)"><span class="qi-q-text">How do you prepare before a salary negotiation conversation?</span><span class="qi-toggle">Example ▾</span></div><div class="qi-ans">I write down <span class="hl">specific accomplishments with measurable impact</span>, research a realistic market range, and decide beforehand what my walk-away point is. Going in with numbers instead of just a feeling makes a huge difference in confidence.</div></div>
+            <div class="qi-wrap"><div class="qi-q" onclick="toggleAns(this)"><span class="qi-q-text">What would you do if a company refused to negotiate at all?</span><span class="qi-toggle">Example ▾</span></div><div class="qi-ans">It would tell me something important about <span class="hl">how that company treats employees more broadly.</span> A flat refusal without any conversation is a bit of a red flag, even if I ultimately decided to accept the offer anyway.</div></div>
+          </div>
+          <button class="vtoggle" onclick="toggleV(this)">Vocabulary</button>
+          <div class="vlist"><div class="vc">leverage</div><div class="vc">market rate</div><div class="vc">counteroffer</div><div class="vc">ceiling</div><div class="vc">negotiate</div><div class="vc">benchmark</div><div class="vc">justify</div><div class="vc">walk away</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="sc2">
+      <div class="shead"><div class="sn2 ng">56</div><div class="sbadge bg">Speaking</div><div class="stitle">Topic PP · Research &amp; Discuss</div></div>
+      <div class="sbody">
+        <div class="tblock">
+          <div class="tlabel"><span class="tdot"></span>Topic PP · Research &amp; Discuss</div>
+          <div class="demo-wrap">
+            <div class="demo-header"><span style="font-size:18px"></span><div class="demo-htitle">Research Task: Salary negotiation norms in another country</div><div class="demo-hsub">Independent research · 4 questions for host discussion</div></div>
+            <div class="demo-body">
+              <div class="dslabel" style="margin-bottom:.5rem">Task: Ask someone you know — a friend, colleague, or family member — about a time they successfully negotiated a raise or a better job offer. Come ready to share what you found and what you'd take from it.</div>
+              <button class="vtoggle" onclick="toggleV(this)">Vocabulary</button>
+              <div class="vlist"><div class="vc">raise</div><div class="vc">counteroffer</div><div class="vc">nervous</div><div class="vc">confident</div><div class="vc">deserve</div><div class="vc">ask for</div><div class="vc">successful</div><div class="vc">turned down</div><div class="vc">worth it</div><div class="vc">prepared</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="sc2">
+      <div class="shead"><div class="sn2 na">57</div><div class="sbadge ba">Presentation</div><div class="stitle">Is the Traditional Career Ladder Obsolete?</div></div>
+      <div class="sbody">
+        <div class="pcard" style="margin-bottom:.85rem">
+          <div class="ptitle">Is the Traditional Career Ladder Obsolete?</div>
+          <div class="pdesc">Present a clear position on whether the traditional 'climb the ladder' career model still makes sense, compared to lateral moves, career pivots, or portfolio careers. Use PREP and real examples.<span class="ptip">PREP structure</span><span class="ptip">Q&amp;A · Post-presentation</span></div>
+        </div>
+        <div class="tblock">
+          <div class="tlabel"><span class="tdot"></span>Q&amp;A · Post-presentation</div>
+          <div class="qlist">
+            <div class="qi" style="margin-bottom:4px">What is your overall position on the traditional career ladder?</div>
+            <div class="qi" style="margin-bottom:4px">What is the strongest argument for still climbing a traditional ladder?</div>
+            <div class="qi" style="margin-bottom:4px">What is the strongest argument for a more non-linear career path?</div>
+            <div class="qi" style="margin-bottom:4px">How do you personally define career progress?</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
 </div>
 </div>
@@ -1545,6 +2487,16 @@ function showW(n,btn){
   document.getElementById('w'+n).classList.add('on');
   btn.classList.add('on');
 }
+function toggleWGroup(n,btn){
+  var body=document.getElementById('wgbody'+n);
+  var wasOpen=body.classList.contains('open');
+  document.querySelectorAll('.wgroup-head').forEach(h=>h.classList.remove('open'));
+  document.querySelectorAll('.wgroup-body').forEach(b=>b.classList.remove('open'));
+  if(!wasOpen){
+    btn.classList.add('open');
+    body.classList.add('open');
+  }
+}
 function toggleAns(el){
   var ans = el.nextElementSibling;
   var open = ans.classList.toggle('open');
@@ -1559,7 +2511,8 @@ function toggleVC(btn){
 function toggleV(btn){
   var list=btn.nextElementSibling;
   var open=list.classList.toggle('open');
-  btn.innerHTML='📋 '+(open?'Ẩn vocabulary':'Vocabulary (8 từ)');
+  var count=list.querySelectorAll('.vc').length;
+  btn.innerHTML='📋 '+(open?'Ẩn vocabulary':'Vocabulary ('+count+' từ)');
 }
 
 function toggleVCGroup(btn){
